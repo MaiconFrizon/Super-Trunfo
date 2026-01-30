@@ -195,8 +195,21 @@ export default function GuestView() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-20"
             >
-              <Gift className="w-16 h-16 text-stone-300 mx-auto mb-4" />
-              <p className="font-body text-xl text-stone-600">Nenhum presente encontrado</p>
+              <motion.div
+                animate={{ 
+                  rotate: [0, 10, -10, 10, 0],
+                  scale: [1, 1.1, 1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3
+                }}
+              >
+                <Gift className="w-16 h-16 text-gold-300 mx-auto mb-4" />
+              </motion.div>
+              <p className="font-body text-xl text-stone-600 mb-2">🎁 Nenhum presente aqui ainda</p>
+              <p className="font-body text-sm text-stone-500">Tente mudar o filtro ou volte mais tarde!</p>
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
