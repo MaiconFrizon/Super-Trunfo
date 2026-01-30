@@ -372,6 +372,99 @@ export default function AdminDashboard() {
         onSubmit={editingGift ? (data) => handleUpdateGift(editingGift.id, data) : handleAddGift}
         initialData={editingGift}
       />
+
+      {/* Gift Details Modal */}
+      {viewingDetails && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            onClick={() => setViewingDetails(null)}
+            className="absolute inset-0 bg-stone-900/50 backdrop-blur-sm"
+          />
+          <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-8">
+            <button
+              onClick={() => setViewingDetails(null)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors"
+            >
+              <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="mb-6">
+              <h3 className="font-heading text-2xl font-semibold text-stone-800 mb-2">
+                {viewingDetails.name}
+              </h3>
+              <div className="flex items-center gap-2">
+                <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${
+                  viewingDetails.is_selected
+                    ? 'bg-rose-100 text-rose-700'
+                    : 'bg-gold-100 text-gold-700'
+                }`}>
+                  {viewingDetails.is_selected ? 'Escolhido' : 'Disponível'}
+                </span>
+              </div>
+            </div>
+
+            {viewingDetails.selected_by && (
+              <div className="space-y-4">
+                <div className="bg-stone-50 rounded-xl p-6 space-y-4">
+                  <div>
+                    <p className="font-body text-xs text-stone-500 uppercase tracking-wider mb-1">
+                      Escolhido por
+                    </p>
+                    <p className="font-body text-lg text-stone-800 font-medium">
+                      {viewingDetails.selected_by.first_name} {viewingDetails.selected_by.last_name}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="font-body text-xs text-stone-500 uppercase tracking-wider mb-1">
+                      Contato
+                    </p>
+                    <p className="font-body text-base text-stone-700">
+                      {viewingDetails.selected_by.contact}
+                    </p>
+                  </div>
+
+                  {viewingDetails.selected_by.selected_at && (
+                    <div>
+                      <p className="font-body text-xs text-stone-500 uppercase tracking-wider mb-1">
+                        Data de Seleção
+                      </p>
+                      <p className="font-body text-base text-stone-700">
+                        {new Date(viewingDetails.selected_by.selected_at).toLocaleString('pt-BR')}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {viewingDetails.selected_by.message && (
+                  <div className="bg-rose-50 rounded-xl p-6">
+                    <div className="flex items-start gap-3">
+                      <MessageCircle className="w-6 h-6 text-rose-500 flex-shrink-0 mt-1" />
+                      <div>
+                        <p className="font-body text-xs text-rose-700 uppercase tracking-wider mb-2">
+                          Mensagem para os noivos
+                        </p>
+                        <p className="font-body text-base text-stone-700 leading-relaxed">
+                          "{viewingDetails.selected_by.message}"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            <button
+              onClick={() => setViewingDetails(null)}
+              className="mt-6 w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
