@@ -164,13 +164,36 @@ export default function GuestView() {
               Sem pressa, explore com calma 😊
             </motion.p>
 
+            {/* Momento de Pausa Emocional */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="max-w-xl mx-auto mb-8"
+            >
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-gold-100/50">
+                <p className="font-body text-base text-center text-stone-700 leading-loose">
+                  Este é um momento especial. Não há pressa. 
+                  Explore com calma, escolha aquele presente que fala 
+                  ao seu coração, e saiba que sua participação significa muito 
+                  para o Maicon e a Thalita 💛
+                </p>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.7 }}
               className="inline-flex items-center gap-2 bg-gold-50 border border-gold-200 rounded-full px-6 py-2 mb-8"
             >
-              <span className="text-2xl">✨</span>
+              <motion.span 
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+                className="text-2xl"
+              >
+                ✨
+              </motion.span>
               <span className="font-body text-sm text-gold-800">
                 Já escolheu? Sua mensagem vai emocionar o casal
               </span>
