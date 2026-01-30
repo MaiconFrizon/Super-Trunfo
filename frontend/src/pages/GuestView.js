@@ -269,14 +269,45 @@ export default function GuestView() {
       </motion.section>
 
       {/* How It Works Section */}
-      <section className="py-12 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Versão Mobile - Accordion Compacto */}
+          <div className="md:hidden">
+            <details className="group">
+              <summary className="flex items-center justify-center gap-2 cursor-pointer py-3 text-sm font-body text-gold-600 hover:text-gold-700">
+                <span>Como funciona?</span>
+                <motion.span
+                  className="text-lg group-open:rotate-180 transition-transform"
+                >
+                  💡
+                </motion.span>
+              </summary>
+              <div className="mt-4 text-center">
+                <ol className="text-sm text-stone-600 space-y-2 inline-block text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 font-semibold">1.</span>
+                    <span>Veja os presentes disponíveis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-rose-600 font-semibold">2.</span>
+                    <span>Escolha aquele que toca o coração</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 font-semibold">3.</span>
+                    <span>Deixe uma mensagem carinhosa</span>
+                  </li>
+                </ol>
+              </div>
+            </details>
+          </div>
+
+          {/* Versão Desktop - Cards Completos */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-white via-stone-50/30 to-gold-50/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-sm border border-stone-100"
+            className="hidden md:block bg-gradient-to-br from-white via-stone-50/30 to-gold-50/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-sm border border-stone-100"
           >
             <h3 className="font-heading text-2xl md:text-3xl text-center text-stone-800 mb-3 font-semibold">
               Como funciona? É super simples 🌟
