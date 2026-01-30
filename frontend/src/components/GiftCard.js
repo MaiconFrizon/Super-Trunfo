@@ -7,37 +7,56 @@ export default function GiftCard({ gift, index, onSelect }) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.08 }}
+      whileHover={{ y: -8 }}
       className="group"
     >
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 border border-stone-100 relative">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-rose-100/50 transition-all duration-500 border border-stone-100 relative">
         {/* Image */}
         <div className="relative aspect-square overflow-hidden bg-stone-100">
-          <img
+          <motion.img
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.7 }}
             src={gift.image_url}
             alt={gift.name}
             onError={(e) => {
               e.target.src = 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=800&fit=crop';
             }}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            className="w-full h-full object-cover"
           />
           
           {/* Overlay for selected gifts */}
           {gift.is_selected && (
-            <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center"
+            >
               <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                  className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3"
+                >
                   <Check className="w-8 h-8 text-rose-500" />
-                </div>
-                <span className="font-body text-white font-semibold text-lg">Já Escolhido</span>
+                </motion.div>
+                <motion.span 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="font-body text-white font-semibold text-lg"
+                >
+                  Já Escolhido 💝
+                </motion.span>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
 
         {/* Content */}
         <div className="p-6">
-          <h3 className="font-heading text-xl font-semibold text-stone-800 mb-4 line-clamp-2">
+          <h3 className="font-heading text-xl font-semibold text-stone-800 mb-4 line-clamp-2 group-hover:text-gold-600 transition-colors">
             {gift.name}
           </h3>
 
@@ -49,14 +68,21 @@ export default function GiftCard({ gift, index, onSelect }) {
               </span>
             </div>
           ) : (
-            <button
+            <motion.button
               data-testid={`select-gift-${gift.id}`}
               onClick={() => onSelect(gift)}
-              className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button"
             >
-              <Heart className="w-5 h-5" />
-              <span>Escolher este Presente</span>
-            </button>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <Heart className="w-5 h-5 group-hover/button:fill-current" />
+              </motion.div>
+              <span>Quero dar este presente 💝</span>
+            </motion.button>
           )}
         </div>
       </div>
