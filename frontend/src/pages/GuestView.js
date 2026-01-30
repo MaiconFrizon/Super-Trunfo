@@ -484,20 +484,47 @@ export default function GuestView() {
       </section>
 
       {/* Footer with Admin Link */}
-      <footer className="bg-white border-t border-stone-200 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="font-body text-sm text-stone-500 mb-2">
-            Lista de Presentes - Chá de Cozinha
-          </p>
-          <a
-            href="/admin"
-            className="inline-flex items-center gap-2 font-body text-xs text-stone-400 hover:text-gold-600 transition-colors"
+      <footer className="bg-gradient-to-br from-rose-50 via-stone-50 to-gold-50 py-16 border-t border-gold-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            Acesso Administrativo
-          </a>
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            >
+              <Heart className="w-10 h-10 text-gold-500 mx-auto mb-6" fill="currentColor" />
+            </motion.div>
+            
+            <h3 className="font-heading text-3xl text-stone-800 font-semibold mb-4">
+              Obrigado por estar aqui 💛
+            </h3>
+            
+            <p className="font-body text-lg text-stone-600 leading-relaxed mb-6 max-w-2xl mx-auto">
+              Sua presença e carinho fazem toda a diferença neste momento especial.
+              Maicon e Thalita agradecem de coração.
+            </p>
+            
+            <div className="mb-6">
+              <p className="font-body text-sm text-stone-500 italic">
+                Com amor, Maicon & Thalita 🙏
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-stone-200/50">
+              <a
+                href="/admin"
+                className="inline-flex items-center gap-2 font-body text-xs text-stone-400 hover:text-gold-600 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Acesso Administrativo
+              </a>
+            </div>
+          </motion.div>
         </div>
       </footer>
 
