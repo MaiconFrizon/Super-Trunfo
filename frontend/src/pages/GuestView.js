@@ -203,6 +203,127 @@ export default function GuestView() {
         </div>
       </motion.section>
 
+      {/* How It Works Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-white via-stone-50/30 to-gold-50/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-sm border border-stone-100"
+          >
+            <h3 className="font-heading text-2xl md:text-3xl text-center text-stone-800 mb-3 font-semibold">
+              Como funciona? É super simples 🌟
+            </h3>
+            <p className="font-body text-sm text-center text-stone-500 mb-10">
+              Relaxe e aproveite o momento
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-center"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-16 h-16 bg-gradient-to-br from-gold-100 to-gold-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+                >
+                  <span className="text-3xl">👀</span>
+                </motion.div>
+                <div className="mb-2">
+                  <span className="font-body text-xs uppercase tracking-wider text-stone-400">Passo 1</span>
+                </div>
+                <p className="font-body text-base text-stone-700 leading-relaxed">
+                  <strong className="text-gold-600">Explore</strong> os presentes disponíveis com calma
+                </p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-center"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  className="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+                >
+                  <span className="text-3xl">💖</span>
+                </motion.div>
+                <div className="mb-2">
+                  <span className="font-body text-xs uppercase tracking-wider text-stone-400">Passo 2</span>
+                </div>
+                <p className="font-body text-base text-stone-700 leading-relaxed">
+                  <strong className="text-rose-600">Escolha</strong> aquele que toca o seu coração
+                </p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-center"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-16 h-16 bg-gradient-to-br from-gold-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+                >
+                  <span className="text-3xl">✍️</span>
+                </motion.div>
+                <div className="mb-2">
+                  <span className="font-body text-xs uppercase tracking-wider text-stone-400">Passo 3</span>
+                </div>
+                <p className="font-body text-base text-stone-700 leading-relaxed">
+                  <strong className="text-gold-600">Deixe</strong> uma mensagem que vai emocionar
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-8 text-center"
+            >
+              <div className="inline-flex items-center gap-2 bg-gold-50/50 rounded-full px-4 py-2 border border-gold-100">
+                <span className="text-lg">💡</span>
+                <p className="font-body text-xs text-stone-600">
+                  Cada presente só pode ser escolhido uma vez
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Prova Social */}
+      {selectedCount > 0 && (
+        <section className="py-6 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <p className="font-body text-sm text-stone-600 flex items-center justify-center gap-2">
+                <span className="text-lg">💕</span>
+                <span>
+                  <strong className="text-rose-600">{selectedCount}</strong> {selectedCount === 1 ? 'pessoa já participou' : 'pessoas já participaram'} com carinho
+                </span>
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Filter Section */}
       <section className="bg-white border-b border-stone-200 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
