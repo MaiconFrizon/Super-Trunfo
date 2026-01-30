@@ -254,23 +254,32 @@ export default function AdminDashboard() {
       <section className="py-8 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4">
-            <button
+            <motion.button
               data-testid="add-gift-button"
               onClick={() => setShowAddModal(true)}
-              className="bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
-              <Plus className="w-5 h-5" />
+              <motion.div
+                animate={{ rotate: [0, 90, 0] }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                <Plus className="w-5 h-5" />
+              </motion.div>
               <span>Adicionar Presente</span>
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
               data-testid="export-data-button"
               onClick={handleExport}
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
               className="bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 rounded-full px-6 py-3 font-body font-medium transition-all duration-300 flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               <span>Exportar Dados</span>
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
