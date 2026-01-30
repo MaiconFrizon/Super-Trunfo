@@ -91,28 +91,43 @@ export default function GuestView() {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg mb-8">
+            <motion.div 
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+              className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg mb-8"
+            >
               <Heart className="w-10 h-10 text-gold-500" fill="currentColor" />
-            </div>
+            </motion.div>
             
             <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-stone-800 mb-6">
-              Chá de Cozinha
+              💛 Nosso Chá de Cozinha
             </h1>
             
             <p className="font-body text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto mb-8">
-              Escolha um presente especial para os noivos! Cada presente é único e só pode ser escolhido uma vez. 
-              Selecione o seu favorito e deixe uma mensagem carinhosa.
+              Ajude a construir o lar dos noivos com carinho! Cada presente é único e especial. 
+              Escolha o seu favorito e deixe uma mensagem que ficará guardada para sempre.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center items-center">
-              <div className="bg-white rounded-full px-6 py-3 shadow-md">
-                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Disponíveis</span>
+              <motion.div 
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="bg-white rounded-full px-6 py-3 shadow-md"
+              >
+                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Disponíveis ✨</span>
                 <span className="ml-2 font-heading text-2xl font-semibold text-gold-600">{availableCount}</span>
-              </div>
-              <div className="bg-white rounded-full px-6 py-3 shadow-md">
-                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Escolhidos</span>
+              </motion.div>
+              <motion.div 
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="bg-white rounded-full px-6 py-3 shadow-md"
+              >
+                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Escolhidos 💝</span>
                 <span className="ml-2 font-heading text-2xl font-semibold text-rose-500">{selectedCount}</span>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
