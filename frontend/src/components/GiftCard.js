@@ -60,8 +60,8 @@ export default function GiftCard({ gift, index, onSelect }) {
         </div>
 
         {/* Content */}
-        <div className="p-6">
-          <h3 className="font-heading text-xl font-semibold text-stone-800 mb-4 line-clamp-2 group-hover:text-gold-600 transition-colors">
+        <div className="p-4 md:p-6">
+          <h3 className="font-heading text-lg md:text-xl font-semibold text-stone-800 line-clamp-1 mb-3 md:mb-4 group-hover:text-gold-600 transition-colors">
             {gift.name}
           </h3>
 
@@ -74,7 +74,8 @@ export default function GiftCard({ gift, index, onSelect }) {
             </div>
           ) : (
             <>
-              <p className="text-xs text-center text-stone-500 mb-3 italic">
+              {/* Reassurance - Apenas Desktop */}
+              <p className="hidden md:block text-xs text-center text-stone-500 mb-3 italic">
                 Explore à vontade, sem compromisso
               </p>
               <motion.button
@@ -82,7 +83,7 @@ export default function GiftCard({ gift, index, onSelect }) {
                 onClick={() => onSelect(gift)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button"
+                className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 md:py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button text-base md:text-base"
               >
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
@@ -90,7 +91,8 @@ export default function GiftCard({ gift, index, onSelect }) {
                 >
                   <Heart className="w-5 h-5 group-hover/button:fill-current" />
                 </motion.div>
-                <span>Quero dar este presente 💝</span>
+                <span className="hidden md:inline">Quero dar este presente 💝</span>
+                <span className="md:hidden">Escolher 💝</span>
               </motion.button>
             </>
           )}
