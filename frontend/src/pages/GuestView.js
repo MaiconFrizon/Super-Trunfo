@@ -420,8 +420,8 @@ export default function GuestView() {
         </section>
       )}
 
-      {/* Filter Section */}
-      <section className="bg-white border-b border-stone-200 sticky top-0 z-40 shadow-sm">
+      {/* Filter Section - Desktop apenas */}
+      <section className="hidden md:block bg-white border-b border-stone-200 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-2">
