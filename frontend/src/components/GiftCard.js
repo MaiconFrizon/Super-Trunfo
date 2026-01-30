@@ -73,21 +73,26 @@ export default function GiftCard({ gift, index, onSelect }) {
               </span>
             </div>
           ) : (
-            <motion.button
-              data-testid={`select-gift-${gift.id}`}
-              onClick={() => onSelect(gift)}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+            <>
+              <p className="text-xs text-center text-stone-500 mb-3 italic">
+                Explore à vontade, sem compromisso
+              </p>
+              <motion.button
+                data-testid={`select-gift-${gift.id}`}
+                onClick={() => onSelect(gift)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button"
               >
-                <Heart className="w-5 h-5 group-hover/button:fill-current" />
-              </motion.div>
-              <span>Quero dar este presente 💝</span>
-            </motion.button>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <Heart className="w-5 h-5 group-hover/button:fill-current" />
+                </motion.div>
+                <span>Quero dar este presente 💝</span>
+              </motion.button>
+            </>
           )}
         </div>
       </div>
