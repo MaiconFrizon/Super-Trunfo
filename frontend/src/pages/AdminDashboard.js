@@ -59,12 +59,18 @@ export default function AdminDashboard() {
       await axios.post(`${API}/admin/gifts`, giftData, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      toast.success('Presente adicionado com sucesso!');
+      toast.success('✨ Presente adicionado!', {
+        description: 'O novo presente está disponível para escolha',
+        duration: 3000
+      });
       setShowAddModal(false);
       fetchGifts();
     } catch (error) {
       console.error('Erro ao adicionar presente:', error);
-      toast.error('Erro ao adicionar presente');
+      toast.error('Erro ao adicionar presente', {
+        description: 'Tente novamente',
+        duration: 3000
+      });
     }
   };
 
@@ -74,12 +80,18 @@ export default function AdminDashboard() {
       await axios.put(`${API}/admin/gifts/${giftId}`, giftData, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      toast.success('Presente atualizado com sucesso!');
+      toast.success('✓ Presente atualizado!', {
+        description: 'As alterações foram salvas',
+        duration: 3000
+      });
       setEditingGift(null);
       fetchGifts();
     } catch (error) {
       console.error('Erro ao atualizar presente:', error);
-      toast.error('Erro ao atualizar presente');
+      toast.error('Erro ao atualizar presente', {
+        description: 'Tente novamente',
+        duration: 3000
+      });
     }
   };
 
@@ -93,11 +105,17 @@ export default function AdminDashboard() {
       await axios.delete(`${API}/admin/gifts/${giftId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      toast.success('Presente removido com sucesso!');
+      toast.success('🗑️ Presente removido', {
+        description: 'O presente foi excluído da lista',
+        duration: 3000
+      });
       fetchGifts();
     } catch (error) {
       console.error('Erro ao remover presente:', error);
-      toast.error('Erro ao remover presente');
+      toast.error('Erro ao remover presente', {
+        description: 'Tente novamente',
+        duration: 3000
+      });
     }
   };
 
@@ -117,10 +135,16 @@ export default function AdminDashboard() {
       link.click();
       link.remove();
       
-      toast.success('Dados exportados com sucesso!');
+      toast.success('📊 Dados exportados!', {
+        description: 'O arquivo CSV foi baixado com sucesso',
+        duration: 3000
+      });
     } catch (error) {
       console.error('Erro ao exportar dados:', error);
-      toast.error('Erro ao exportar dados');
+      toast.error('Erro ao exportar dados', {
+        description: 'Tente novamente',
+        duration: 3000
+      });
     }
   };
 
