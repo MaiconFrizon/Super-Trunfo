@@ -548,36 +548,49 @@ export default function GuestView() {
       </section>
 
       {/* Footer with Admin Link */}
-      <footer className="bg-gradient-to-br from-rose-50 via-stone-50 to-gold-50 py-16 border-t border-gold-100">
+      <footer className="bg-gradient-to-br from-rose-50 via-stone-50 to-gold-50 py-8 md:py-16 border-t border-gold-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-            >
-              <Heart className="w-10 h-10 text-gold-500 mx-auto mb-6" fill="currentColor" />
-            </motion.div>
-            
-            <h3 className="font-heading text-3xl text-stone-800 font-semibold mb-4">
-              Obrigado por estar aqui 💛
-            </h3>
-            
-            <p className="font-body text-lg text-stone-600 leading-relaxed mb-6 max-w-2xl mx-auto">
-              Sua presença e carinho fazem toda a diferença neste momento especial.
-              Maicon e Thalita agradecem de coração.
-            </p>
-            
-            <div className="mb-6">
-              <p className="font-body text-sm text-stone-500 italic">
-                Com amor, Maicon & Thalita 🙏
+            {/* Mobile - Versão Compacta */}
+            <div className="md:hidden">
+              <p className="font-body text-base text-stone-700 mb-2">
+                Obrigado por estar aqui 💛
+              </p>
+              <p className="font-body text-xs text-stone-500 mb-4">
+                Com amor, Maicon & Thalita
               </p>
             </div>
 
-            <div className="pt-6 border-t border-stone-200/50">
+            {/* Desktop - Versão Completa */}
+            <div className="hidden md:block">
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                <Heart className="w-10 h-10 text-gold-500 mx-auto mb-6" fill="currentColor" />
+              </motion.div>
+              
+              <h3 className="font-heading text-3xl text-stone-800 font-semibold mb-4">
+                Obrigado por estar aqui 💛
+              </h3>
+              
+              <p className="font-body text-lg text-stone-600 leading-relaxed mb-6 max-w-2xl mx-auto">
+                Sua presença e carinho fazem toda a diferença neste momento especial.
+                Maicon e Thalita agradecem de coração.
+              </p>
+              
+              <div className="mb-6">
+                <p className="font-body text-sm text-stone-500 italic">
+                  Com amor, Maicon & Thalita 🙏
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 md:pt-6 border-t border-stone-200/50">
               <a
                 href="/admin"
                 className="inline-flex items-center gap-2 font-body text-xs text-stone-400 hover:text-gold-600 transition-colors"
