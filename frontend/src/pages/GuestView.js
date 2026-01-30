@@ -203,7 +203,7 @@ export default function GuestView() {
               <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
                 className="bg-white rounded-full px-6 py-3 shadow-md"
               >
                 <span className="font-body text-sm text-stone-500 uppercase tracking-widest">✨ Esperando por você</span>
@@ -212,10 +212,10 @@ export default function GuestView() {
               <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
                 className="bg-white rounded-full px-6 py-3 shadow-md"
               >
-                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">💝 Já tem um lar</span>
+                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">💝 Já com um lar</span>
                 <span className="ml-2 font-heading text-2xl font-semibold text-rose-500">{selectedCount}</span>
               </motion.div>
             </div>
