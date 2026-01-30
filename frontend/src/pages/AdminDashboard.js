@@ -321,7 +321,12 @@ export default function AdminDashboard() {
                           {gift.selected_by?.message ? (
                             <div className="flex items-start gap-2 max-w-xs">
                               <MessageCircle className="w-4 h-4 text-stone-400 flex-shrink-0 mt-0.5" />
-                              <span className="font-body text-sm text-stone-700 line-clamp-2">{gift.selected_by.message}</span>
+                              <button
+                                onClick={() => setViewingDetails(gift)}
+                                className="font-body text-sm text-gold-600 hover:text-gold-700 underline text-left"
+                              >
+                                Ver mensagem completa
+                              </button>
                             </div>
                           ) : (
                             <span className="font-body text-sm text-stone-400">-</span>
