@@ -136,11 +136,11 @@ export default function GuestView() {
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   className="w-16 h-16 rounded-full bg-gradient-to-br from-rose-300 to-gold-400 flex items-center justify-center text-white font-heading text-2xl font-bold shadow-lg"
                 >
-                  J
+                  T
                 </motion.div>
               </div>
               <p className="font-body text-lg text-stone-600 font-medium">
-                Maria & João estão construindo um lar cheio de amor
+                Maicon & Thalita estão construindo um lar cheio de amor
               </p>
             </motion.div>
             
