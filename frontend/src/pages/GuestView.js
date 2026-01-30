@@ -59,10 +59,17 @@ export default function GuestView() {
   const handleConfirmSelection = async (selectionData) => {
     try {
       await axios.post(`${API}/gifts/${selectedGift.id}/select`, selectionData);
-      toast.success('🎉 Presente reservado com sucesso!', {
-        description: 'Os noivos vão amar! Muito obrigado pela participação 💕',
-        duration: 5000
+      
+      // Redirecionar para Thank You Page com informações do presente
+      setTimeout(() => {
+        navigate('/obrigado', { state: { giftName: selectedGift.name } });
+      }, 1000);
+      
+      toast.success('🎉 Presente reservado!', {
+        description: 'Redirecionando...',
+        duration: 2000
       });
+      
       setSelectedGift(null);
       fetchGifts();
     } catch (error) {
