@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Gift, Heart, Check, Filter } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import GiftCard from '../components/GiftCard';
 import GiftModal from '../components/GiftModal';
 
@@ -15,6 +16,7 @@ export default function GuestView() {
   const [selectedGift, setSelectedGift] = useState(null);
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchGifts();
