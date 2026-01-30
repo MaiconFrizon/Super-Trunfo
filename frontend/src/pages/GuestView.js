@@ -366,39 +366,51 @@ export default function GuestView() {
             </div>
             
             <div className="flex gap-2">
-              <button
+              <motion.button
                 data-testid="filter-all-button"
                 onClick={() => setFilter('all')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`rounded-full px-6 py-2 font-body font-medium transition-all duration-300 ${
                   filter === 'all'
                     ? 'bg-gold-500 text-white shadow-lg'
                     : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                 }`}
               >
-                Todos ({gifts.length})
-              </button>
-              <button
+                Ver todos 💛
+              </motion.button>
+              <motion.button
                 data-testid="filter-available-button"
                 onClick={() => setFilter('available')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`rounded-full px-6 py-2 font-body font-medium transition-all duration-300 ${
                   filter === 'available'
                     ? 'bg-gold-500 text-white shadow-lg'
                     : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                 }`}
               >
-                Disponíveis ({availableCount})
-              </button>
-              <button
+                <span className="flex items-center gap-2">
+                  <span>Esperando por você</span>
+                  <span className="text-xs">✨ {availableCount}</span>
+                </span>
+              </motion.button>
+              <motion.button
                 data-testid="filter-selected-button"
                 onClick={() => setFilter('selected')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`rounded-full px-6 py-2 font-body font-medium transition-all duration-300 ${
                   filter === 'selected'
                     ? 'bg-gold-500 text-white shadow-lg'
                     : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                 }`}
               >
-                Escolhidos ({selectedCount})
-              </button>
+                <span className="flex items-center gap-2">
+                  <span>Já com um lar</span>
+                  <span className="text-xs">💝 {selectedCount}</span>
+                </span>
+              </motion.button>
             </div>
           </div>
         </div>
