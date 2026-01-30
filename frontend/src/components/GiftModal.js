@@ -77,18 +77,23 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
 
             {/* Form */}
             <div className="p-6 md:p-8">
-              <div className="flex items-center gap-2 mb-6">
-                <Heart className="w-6 h-6 text-gold-500" fill="currentColor" />
-                <p className="font-body text-lg text-stone-700">
-                  Preencha seus dados para confirmar a escolha
-                </p>
+              <div className="flex items-start gap-3 mb-6 bg-gold-50 rounded-2xl p-4 border border-gold-100">
+                <Heart className="w-6 h-6 text-gold-500 flex-shrink-0 mt-1" fill="currentColor" />
+                <div>
+                  <p className="font-body text-base text-stone-700 font-medium mb-1">
+                    Você escolheu um presente lindo! ✨
+                  </p>
+                  <p className="font-body text-sm text-stone-600">
+                    Agora só faltam alguns detalhes. Fique tranquilo(a), é rapidinho 😊
+                  </p>
+                </div>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="first_name" className="block font-body text-sm font-medium text-stone-700 mb-2">
-                      Nome *
+                      Como podemos te chamar? *
                     </label>
                     <input
                       id="first_name"
@@ -121,7 +126,7 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
 
                 <div>
                   <label htmlFor="contact" className="block font-body text-sm font-medium text-stone-700 mb-2">
-                    Contato (Email ou WhatsApp) *
+                    Como os noivos podem agradecer? *
                   </label>
                   <input
                     id="contact"
@@ -131,13 +136,13 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                     value={formData.contact}
                     onChange={(e) => setFormData({...formData, contact: e.target.value})}
                     className="w-full rounded-lg border-2 border-stone-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/20 bg-stone-50/50 px-4 py-3 font-body text-stone-800 transition-all outline-none"
-                    placeholder="exemplo@email.com ou (11) 99999-9999"
+                    placeholder="Email ou WhatsApp"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block font-body text-sm font-medium text-stone-700 mb-2">
-                    Mensagem para os noivos (opcional)
+                    Quer deixar uma mensagem? (Opcional, mas eles vão amar 💛)
                   </label>
                   <textarea
                     id="message"
@@ -146,7 +151,7 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full rounded-lg border-2 border-stone-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/20 bg-stone-50/50 px-4 py-3 font-body text-stone-800 transition-all outline-none resize-none"
-                    placeholder="Deixe uma mensagem carinhosa para o casal..."
+                    placeholder="Escreva algo que saia do coração..."
                   />
                 </div>
 
@@ -156,7 +161,7 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                     onClick={onClose}
                     className="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-full px-6 py-3 font-body font-medium transition-all duration-300"
                   >
-                    Cancelar
+                    Voltar para escolher outro
                   </button>
                   <button
                     type="submit"
@@ -172,7 +177,7 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>Confirmar Escolha</span>
+                        <span>Confirmar com carinho 💝</span>
                       </>
                     )}
                   </button>
