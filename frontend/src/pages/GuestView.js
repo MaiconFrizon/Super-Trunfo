@@ -399,9 +399,9 @@ export default function GuestView() {
         </div>
       </section>
 
-      {/* Prova Social */}
+      {/* Prova Social - Desktop apenas */}
       {selectedCount > 0 && (
-        <section className="py-6 bg-white">
+        <section className="hidden md:block py-6 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
