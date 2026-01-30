@@ -104,35 +104,101 @@ export default function GuestView() {
               <Heart className="w-10 h-10 text-gold-500" fill="currentColor" />
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-stone-800 mb-6">
-              💛 Nosso Chá de Cozinha
+            <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-stone-800 mb-8">
+              💛 Chá de Cozinha
             </h1>
+
+            {/* Seção Conheça os Noivos */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mb-8"
+            >
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-gold-400 to-rose-300 flex items-center justify-center text-white font-heading text-2xl font-bold shadow-lg"
+                >
+                  M
+                </motion.div>
+                <span className="font-heading text-3xl text-stone-400">+</span>
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-rose-300 to-gold-400 flex items-center justify-center text-white font-heading text-2xl font-bold shadow-lg"
+                >
+                  J
+                </motion.div>
+              </div>
+              <p className="font-body text-lg text-stone-600 font-medium">
+                Maria & João estão construindo um lar cheio de amor
+              </p>
+            </motion.div>
             
-            <p className="font-body text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto mb-8">
-              Ajude a construir o lar dos noivos com carinho! Cada presente é único e especial. 
-              Escolha o seu favorito e deixe uma mensagem que ficará guardada para sempre.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="font-body text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto mb-6"
+            >
+              Você foi convidado para fazer parte de um momento muito especial! 
+              Aqui você pode escolher um presente com carinho para ajudar o casal 
+              a começar essa nova jornada.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="font-body text-base text-stone-500 mb-8"
+            >
+              Sem pressa, explore com calma 😊
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="inline-flex items-center gap-2 bg-gold-50 border border-gold-200 rounded-full px-6 py-2 mb-8"
+            >
+              <span className="text-2xl">✨</span>
+              <span className="font-body text-sm text-gold-800">
+                Já escolheu? Sua mensagem vai emocionar o casal
+              </span>
+            </motion.div>
 
             <div className="flex flex-wrap gap-4 justify-center items-center">
               <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.7 }}
                 className="bg-white rounded-full px-6 py-3 shadow-md"
               >
-                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Disponíveis ✨</span>
+                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">✨ Esperando por você</span>
                 <span className="ml-2 font-heading text-2xl font-semibold text-gold-600">{availableCount}</span>
               </motion.div>
               <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.8 }}
                 className="bg-white rounded-full px-6 py-3 shadow-md"
               >
-                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">Escolhidos 💝</span>
+                <span className="font-body text-sm text-stone-500 uppercase tracking-widest">💝 Já tem um lar</span>
                 <span className="ml-2 font-heading text-2xl font-semibold text-rose-500">{selectedCount}</span>
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="mt-8"
+            >
+              <p className="font-body text-sm text-stone-400 flex items-center justify-center gap-2">
+                <span>👇</span>
+                <span>Comece explorando os presentes abaixo</span>
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
