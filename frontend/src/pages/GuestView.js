@@ -57,14 +57,18 @@ export default function GuestView() {
   const handleConfirmSelection = async (selectionData) => {
     try {
       await axios.post(`${API}/gifts/${selectedGift.id}/select`, selectionData);
-      toast.success('Presente selecionado com sucesso!', {
-        description: 'Obrigado por participar!'
+      toast.success('🎉 Presente reservado com sucesso!', {
+        description: 'Os noivos vão amar! Muito obrigado pela participação 💕',
+        duration: 5000
       });
       setSelectedGift(null);
       fetchGifts();
     } catch (error) {
       console.error('Erro ao selecionar presente:', error);
-      toast.error(error.response?.data?.detail || 'Erro ao selecionar presente');
+      toast.error('Ops! Algo deu errado', {
+        description: error.response?.data?.detail || 'Tente novamente em alguns instantes',
+        duration: 4000
+      });
     }
   };
 
