@@ -14,6 +14,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingGift, setEditingGift] = useState(null);
+  const [viewingDetails, setViewingDetails] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
