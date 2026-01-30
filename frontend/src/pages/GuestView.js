@@ -443,8 +443,30 @@ export default function GuestView() {
               >
                 <Gift className="w-16 h-16 text-gold-300 mx-auto mb-4" />
               </motion.div>
-              <p className="font-body text-xl text-stone-600 mb-2">🎁 Nenhum presente aqui ainda</p>
-              <p className="font-body text-sm text-stone-500">Tente mudar o filtro ou volte mais tarde!</p>
+              
+              {filter === 'available' && availableCount === 0 ? (
+                <>
+                  <p className="font-heading text-2xl text-stone-800 mb-3">💛 Uau! Todos os presentes já foram escolhidos</p>
+                  <p className="font-body text-base text-stone-600 max-w-md mx-auto leading-relaxed">
+                    Que momento lindo de ver! Obrigado por estar aqui.
+                    O Maicon e a Thalita vão ficar muito felizes em saber 
+                    que você veio celebrar junto com eles 🙏
+                  </p>
+                </>
+              ) : filter === 'selected' && selectedCount === 0 ? (
+                <>
+                  <p className="font-heading text-2xl text-stone-800 mb-3">✨ Seja a primeira pessoa a escolher um presente!</p>
+                  <p className="font-body text-base text-stone-600 max-w-md mx-auto leading-relaxed">
+                    Os noivos estão ansiosos para ver as primeiras escolhas.
+                    Explore com calma e siga seu coração 💛
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="font-body text-xl text-stone-600 mb-2">🎁 Nenhum presente neste filtro</p>
+                  <p className="font-body text-sm text-stone-500">Tente mudar o filtro acima!</p>
+                </>
+              )}
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
