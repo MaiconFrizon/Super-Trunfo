@@ -48,7 +48,7 @@ export default function ThankYouPage() {
           className="font-body text-lg md:text-xl text-stone-600 leading-relaxed mb-8"
         >
           Seu presente foi reservado e sua mensagem chegará 
-          direto no coração da Maria e do João.
+          direto no coração do Maicon e da Thalita.
         </motion.p>
         
         <motion.div 
