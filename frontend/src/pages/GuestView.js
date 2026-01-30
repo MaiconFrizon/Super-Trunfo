@@ -108,12 +108,12 @@ export default function GuestView() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-              className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg mb-8"
+              className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white rounded-full shadow-lg mb-6 md:mb-8"
             >
-              <Heart className="w-10 h-10 text-gold-500" fill="currentColor" />
+              <Heart className="w-8 h-8 md:w-10 md:h-10 text-gold-500" fill="currentColor" />
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-stone-800 mb-8">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-stone-800 mb-6 md:mb-8">
               💛 Chá de Cozinha
             </h1>
 
@@ -122,54 +122,65 @@ export default function GuestView() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-8"
+              className="mb-6 md:mb-8"
             >
-              <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-gold-400 to-rose-300 flex items-center justify-center text-white font-heading text-2xl font-bold shadow-lg"
+                  className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-gold-400 to-rose-300 flex items-center justify-center text-white font-heading text-lg md:text-2xl font-bold shadow-lg"
                 >
                   M
                 </motion.div>
-                <span className="font-heading text-3xl text-stone-400">+</span>
+                <span className="font-heading text-2xl md:text-3xl text-stone-400">+</span>
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: -5 }}
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-rose-300 to-gold-400 flex items-center justify-center text-white font-heading text-2xl font-bold shadow-lg"
+                  className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-rose-300 to-gold-400 flex items-center justify-center text-white font-heading text-lg md:text-2xl font-bold shadow-lg"
                 >
                   T
                 </motion.div>
               </div>
-              <p className="font-body text-lg text-stone-600 font-medium">
+              <p className="font-body text-base md:text-lg text-stone-600 font-medium">
                 Maicon & Thalita estão construindo um lar cheio de amor
               </p>
             </motion.div>
             
+            {/* Copy Desktop */}
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="font-body text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto mb-6"
+              className="hidden md:block font-body text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto mb-6"
             >
               Você foi convidado para fazer parte de um momento muito especial! 
               Aqui você pode escolher um presente com carinho para ajudar o casal 
               a começar essa nova jornada.
             </motion.p>
 
+            {/* Copy Mobile - Compacto */}
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="md:hidden font-body text-base text-stone-600 leading-relaxed px-4 mb-4"
+            >
+              Escolha um presente com carinho para o casal 💛
+            </motion.p>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="font-body text-base text-stone-500 mb-8"
+              className="hidden md:block font-body text-base text-stone-500 mb-8"
             >
               Sem pressa, explore com calma 😊
             </motion.p>
 
-            {/* Momento de Pausa Emocional */}
+            {/* Momento de Pausa Emocional - Apenas Desktop */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="max-w-xl mx-auto mb-8"
+              className="hidden md:block max-w-xl mx-auto mb-8"
             >
               <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-gold-100/50">
                 <p className="font-body text-base text-center text-stone-700 leading-loose">
@@ -181,11 +192,31 @@ export default function GuestView() {
               </div>
             </motion.div>
 
+            {/* Badge Mobile - Compacto */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="md:hidden inline-flex items-center gap-2 bg-gold-50 border border-gold-200 rounded-full px-4 py-2 mb-6 text-sm"
+            >
+              <motion.span 
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+                className="text-xl"
+              >
+                ✨
+              </motion.span>
+              <span className="font-body text-xs text-gold-800">
+                {availableCount} {availableCount === 1 ? 'presente esperando' : 'presentes esperando'} por você
+              </span>
+            </motion.div>
+
+            {/* Badge Desktop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 }}
-              className="inline-flex items-center gap-2 bg-gold-50 border border-gold-200 rounded-full px-6 py-2 mb-8"
+              className="hidden md:inline-flex items-center gap-2 bg-gold-50 border border-gold-200 rounded-full px-6 py-2 mb-8"
             >
               <motion.span 
                 animate={{ scale: [1, 1.2, 1] }}
@@ -199,7 +230,8 @@ export default function GuestView() {
               </span>
             </motion.div>
 
-            <div className="flex flex-wrap gap-4 justify-center items-center">
+            {/* Stats Badges - Desktop apenas */}
+            <div className="hidden md:flex flex-wrap gap-4 justify-center items-center">
               <motion.div 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -220,11 +252,12 @@ export default function GuestView() {
               </motion.div>
             </div>
 
+            {/* Seta - Desktop apenas */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="mt-8"
+              className="hidden md:block mt-8"
             >
               <p className="font-body text-sm text-stone-400 flex items-center justify-center gap-2">
                 <span>👇</span>
