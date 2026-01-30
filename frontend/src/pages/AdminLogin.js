@@ -51,12 +51,17 @@ export default function AdminLogin() {
       >
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gold-50 rounded-full mb-4">
+            <motion.div 
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+              className="inline-flex items-center justify-center w-16 h-16 bg-gold-50 rounded-full mb-4"
+            >
               <Lock className="w-8 h-8 text-gold-600" />
-            </div>
+            </motion.div>
             
             <h1 className="font-heading text-3xl md:text-4xl font-semibold text-stone-800 mb-2">
-              Área Administrativa
+              👋 Olá! Bem-vindo(a) de volta
             </h1>
             
             <p className="font-body text-base text-stone-600">
