@@ -164,16 +164,28 @@ export default function AdminDashboard() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200"
+              whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 cursor-pointer transition-all duration-300 hover:border-stone-300"
             >
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-body text-sm text-stone-500 uppercase tracking-widest mb-1">Total de Presentes</p>
-                  <p className="font-heading text-4xl font-bold text-stone-800">{gifts.length}</p>
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="font-heading text-4xl font-bold text-stone-800"
+                  >
+                    {gifts.length}
+                  </motion.p>
                 </div>
-                <div className="w-14 h-14 bg-stone-100 rounded-full flex items-center justify-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-14 h-14 bg-stone-100 rounded-full flex items-center justify-center"
+                >
                   <Gift className="w-7 h-7 text-stone-600" />
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -181,16 +193,28 @@ export default function AdminDashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200"
+              whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(212, 175, 55, 0.2), 0 10px 10px -5px rgba(212, 175, 55, 0.1)" }}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 cursor-pointer transition-all duration-300 hover:border-gold-300"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-body text-sm text-stone-500 uppercase tracking-widest mb-1">Disponíveis</p>
-                  <p className="font-heading text-4xl font-bold text-gold-600">{availableCount}</p>
+                  <p className="font-body text-sm text-stone-500 uppercase tracking-widest mb-1">Disponíveis ✨</p>
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="font-heading text-4xl font-bold text-gold-600"
+                  >
+                    {availableCount}
+                  </motion.p>
                 </div>
-                <div className="w-14 h-14 bg-gold-50 rounded-full flex items-center justify-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-14 h-14 bg-gold-50 rounded-full flex items-center justify-center"
+                >
                   <CheckCircle className="w-7 h-7 text-gold-600" />
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -198,16 +222,28 @@ export default function AdminDashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200"
+              whileHover={{ y: -4, boxShadow: "0 20px 25px -5px rgba(244, 114, 182, 0.2), 0 10px 10px -5px rgba(244, 114, 182, 0.1)" }}
+              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 cursor-pointer transition-all duration-300 hover:border-rose-300"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-body text-sm text-stone-500 uppercase tracking-widest mb-1">Escolhidos</p>
-                  <p className="font-heading text-4xl font-bold text-rose-500">{selectedCount}</p>
+                  <p className="font-body text-sm text-stone-500 uppercase tracking-widest mb-1">Escolhidos 💝</p>
+                  <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="font-heading text-4xl font-bold text-rose-500"
+                  >
+                    {selectedCount}
+                  </motion.p>
                 </div>
-                <div className="w-14 h-14 bg-rose-50 rounded-full flex items-center justify-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-14 h-14 bg-rose-50 rounded-full flex items-center justify-center"
+                >
                   <XCircle className="w-7 h-7 text-rose-500" />
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
