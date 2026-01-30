@@ -30,9 +30,10 @@ export default function GiftCard({ gift, index, onSelect }) {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
               className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center"
             >
-              <div className="text-center">
+              <div className="text-center px-4">
                 <motion.div 
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -41,14 +42,18 @@ export default function GiftCard({ gift, index, onSelect }) {
                 >
                   <Check className="w-8 h-8 text-rose-500" />
                 </motion.div>
-                <motion.span 
+                <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="font-body text-white font-semibold text-lg"
                 >
-                  Já Escolhido 💝
-                </motion.span>
+                  <span className="font-body text-white font-semibold text-lg block mb-1">
+                    Este presente já encontrou
+                  </span>
+                  <span className="font-body text-white font-semibold text-lg block">
+                    um coração especial 💛
+                  </span>
+                </motion.div>
               </div>
             </motion.div>
           )}
