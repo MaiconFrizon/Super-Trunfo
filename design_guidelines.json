@@ -1,0 +1,166 @@
+{
+  "project_name": "Bridal Shower Gift List",
+  "design_philosophy": {
+    "persona": "E1 - The Anti-AI Designer",
+    "theme": "Romantic Luxury (Pastel & Soft with Gold Accents)",
+    "core_principles": [
+      "Fusion over Imitation: Mix bridal elegance with modern SaaS clarity.",
+      "Emotion First: Every interaction should feel like a warm hug.",
+      "Content is King: The gifts are the heroes; the interface is the stage.",
+      "Generous Spacing: Use 2-3x more whitespace than standard apps."
+    ]
+  },
+  "typography": {
+    "font_imports": [
+      "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+    ],
+    "families": {
+      "heading": "Playfair Display, serif",
+      "body": "Lato, sans-serif"
+    },
+    "usage": {
+      "h1": "font-heading text-5xl md:text-7xl font-bold tracking-tight text-stone-800",
+      "h2": "font-heading text-3xl md:text-4xl font-semibold text-stone-700",
+      "h3": "font-heading text-2xl font-medium text-stone-600",
+      "body": "font-body text-base md:text-lg text-stone-600 leading-relaxed",
+      "caption": "font-body text-sm text-stone-500 uppercase tracking-widest"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#D4AF37",
+        "foreground": "#FFFFFF",
+        "50": "#FBF7E6",
+        "100": "#F6EFCC",
+        "500": "#D4AF37",
+        "600": "#AA8C2C",
+        "900": "#554616"
+      },
+      "secondary": {
+        "DEFAULT": "#FCE4EC",
+        "foreground": "#881337",
+        "50": "#FDF2F8",
+        "100": "#FCE7F3",
+        "200": "#FBCFE8",
+        "500": "#F472B6",
+        "900": "#831843"
+      },
+      "background": "#FAFAF9",
+      "surface": "#FFFFFF",
+      "text": {
+        "main": "#44403C",
+        "muted": "#78716C"
+      },
+      "border": "#E7E5E4"
+    },
+    "tailwind_config_extension": {
+      "colors": {
+        "gold": {
+          "50": "#FBF7E6",
+          "100": "#F6EFCC",
+          "500": "#D4AF37",
+          "600": "#AA8C2C"
+        },
+        "rose": {
+          "50": "#FFF1F2",
+          "100": "#FFE4E6",
+          "200": "#FECDD3"
+        },
+        "stone": {
+          "50": "#FAFAF9",
+          "100": "#F5F5F4",
+          "800": "#292524"
+        }
+      },
+      "fontFamily": {
+        "heading": ["Playfair Display", "serif"],
+        "body": ["Lato", "sans-serif"]
+      }
+    }
+  },
+  "layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "spacing": {
+      "section_gap": "py-24 md:py-32",
+      "element_gap": "gap-8 md:gap-12"
+    },
+    "grid_systems": {
+      "gift_gallery": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8",
+      "admin_dashboard": "grid grid-cols-1 md:grid-cols-4 gap-6"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-gold-500 hover:bg-gold-600 text-white rounded-full px-8 py-3 font-body font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1",
+      "secondary": "bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 rounded-full px-6 py-2 font-body font-medium transition-all duration-300",
+      "ghost": "text-stone-500 hover:text-gold-600 font-body font-medium transition-colors"
+    },
+    "cards": {
+      "gift_card": "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 border border-stone-100 group relative",
+      "admin_card": "bg-white rounded-xl border border-stone-200 p-6 shadow-sm"
+    },
+    "inputs": {
+      "default": "rounded-lg border-stone-200 focus:border-gold-500 focus:ring-gold-500/20 bg-stone-50/50"
+    }
+  },
+  "images": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1590580463636-acf81893268f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwYnJpZGFsJTIwc2hvd2VyJTIwdGFibGUlMjBzZXR0aW5nJTIwcGFzdGVsJTIwcGluayUyMGdvbGR8ZW58MHx8fHwxNzY5NzM1MDcxfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Elegant bridal shower table setting with pastel pink flowers and gold accents"
+    },
+    "placeholders": [
+      {
+        "category": "Kitchen",
+        "url": "https://images.unsplash.com/photo-1654064756668-16a32248d391?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwbWl4ZXIlMjBwYXN0ZWwlMjBwaW5rJTIwYWVzdGhldGljfGVufDB8fHx8MTc2OTczNTA3M3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Pastel pink kitchen mixer"
+      },
+      {
+        "category": "Dining",
+        "url": "https://images.unsplash.com/photo-1607448373926-65de32221484?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwZGlubmVyJTIwc2V0JTIwZWxlZ2FudHxlbnwwfHx8fDE3Njk3MzUwNzl8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Elegant ceramic dinner set"
+      },
+      {
+        "category": "Glassware",
+        "url": "https://images.pexels.com/photos/3593428/pexels-photo-3593428.jpeg",
+        "alt": "Crystal champagne glasses"
+      }
+    ]
+  },
+  "universal_guidelines": [
+    "DO NOT use generic 'Bootstrap' layouts. Use asymmetry and generous whitespace.",
+    "DO NOT use pure black (#000000). Use Stone-900 or Charcoal.",
+    "Ensure all text meets APCA contrast standards.",
+    "Use 'sonner' for all toast notifications.",
+    "Use 'lucide-react' for icons (Heart, Gift, Check, User, Lock).",
+    "All interactive elements MUST have 'data-testid' attributes.",
+    "Mobile-first responsive design is mandatory.",
+    "Use 'framer-motion' for subtle entrance animations (fade-in-up)."
+  ],
+  "implementation_steps": [
+    {
+      "step": 1,
+      "description": "Configure Tailwind with custom colors (Gold, Rose, Stone) and Fonts (Playfair, Lato). Update index.css with @import."
+    },
+    {
+      "step": 2,
+      "description": "Create reusable UI components: Button (Pill), Card (Soft), Input (Clean), Modal (Dialog)."
+    },
+    {
+      "step": 3,
+      "description": "Build the 'Guest View' (Landing Page). Hero section with parallax effect, Gift Grid with filter tabs (Available/Taken)."
+    },
+    {
+      "step": 4,
+      "description": "Build the 'Gift Selection Modal'. Simple form with validation. Use Sonner for success feedback."
+    },
+    {
+      "step": 5,
+      "description": "Build the 'Admin View'. Login page (simple password), Dashboard table with sort/filter, Add Gift form."
+    },
+    {
+      "step": 6,
+      "description": "Ensure all states (Loading, Empty, Error) are designed with the same elegance as the success state."
+    }
+  ]
+}
