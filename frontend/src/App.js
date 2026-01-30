@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import GuestView from './pages/GuestView';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import ThankYouPage from './pages/ThankYouPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<GuestView />} />
+          <Route path="/obrigado" element={<ThankYouPage />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
