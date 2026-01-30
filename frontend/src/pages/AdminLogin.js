@@ -26,11 +26,17 @@ export default function AdminLogin() {
     try {
       const response = await axios.post(`${API}/admin/login`, { password });
       localStorage.setItem('admin_token', response.data.access_token);
-      toast.success('Login realizado com sucesso!');
-      navigate('/admin/dashboard');
+      toast.success('👋 Bem-vindo(a) de volta!', {
+        description: 'Carregando seu dashboard...',
+        duration: 2000
+      });
+      setTimeout(() => navigate('/admin/dashboard'), 500);
     } catch (error) {
       console.error('Erro no login:', error);
-      toast.error(error.response?.data?.detail || 'Senha incorreta');
+      toast.error('Senha incorreta', {
+        description: 'Verifique e tente novamente',
+        duration: 3000
+      });
     } finally {
       setLoading(false);
     }
