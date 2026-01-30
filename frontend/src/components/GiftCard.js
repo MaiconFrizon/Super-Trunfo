@@ -16,6 +16,9 @@ export default function GiftCard({ gift, index, onSelect }) {
           <img
             src={gift.image_url}
             alt={gift.name}
+            onError={(e) => {
+              e.target.src = 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=800&fit=crop';
+            }}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           
