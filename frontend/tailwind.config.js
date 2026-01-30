@@ -12,7 +12,31 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		fontFamily: {
+  			heading: ['Playfair Display', 'serif'],
+  			body: ['Lato', 'sans-serif']
+  		},
   		colors: {
+  			gold: {
+  				'50': '#FBF7E6',
+  				'100': '#F6EFCC',
+  				'500': '#D4AF37',
+  				'600': '#AA8C2C'
+  			},
+  			rose: {
+  				'50': '#FFF1F2',
+  				'100': '#FFE4E6',
+  				'200': '#FECDD3'
+  			},
+  			stone: {
+  				'50': '#FAFAF9',
+  				'100': '#F5F5F4',
+  				'500': '#78716C',
+  				'600': '#57534E',
+  				'700': '#44403C',
+  				'800': '#292524',
+  				'900': '#1C1917'
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
