@@ -80,16 +80,21 @@ def create_access_token(data: dict):
     return encoded_jwt
 
 async def verify_admin_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    if not credentials:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    
     try:
         token = credentials.credentials
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         if payload.get("role") != "admin":
-            raise HTTPException(status_code=403, detail="Not authorized")
+            raise HTTPException(status_code=401, detail="Not authorized")
         return payload
     except jwt.ExpiredSignatureError:
         raise HTTPException(status_code=401, detail="Token expired")
     except jwt.JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
+    except Exception:
+        raise HTTPException(status_code=401, detail="Authentication failed")
 
 # ============ ROUTES - PUBLIC ============
 
