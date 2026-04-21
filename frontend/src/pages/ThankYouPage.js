@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Heart, ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
+import Monogram from '../components/Monogram';
+import FloralCorner from '../components/FloralCorner';
 
 export default function ThankYouPage() {
   const navigate = useNavigate();
@@ -9,115 +11,58 @@ export default function ThankYouPage() {
   const giftName = location.state?.giftName || 'Presente especial';
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-stone-50 to-gold-50 px-4">
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-center max-w-xl"
-      >
-        {/* Confetti Animation */}
-        <motion.div
-          animate={{ 
-            scale: [1, 1.3, 1],
-            rotate: [0, 15, -15, 0]
-          }}
-          transition={{ 
-            duration: 1,
-            repeat: 2,
-            ease: "easeInOut"
-          }}
-          className="text-8xl mb-8"
-        >
-          🎉
-        </motion.div>
-        
-        <motion.h1 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="font-heading text-4xl md:text-5xl font-bold text-stone-800 mb-6"
-        >
-          Que lindo gesto! 💛
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="font-body text-lg md:text-xl text-stone-600 leading-relaxed mb-8"
-        >
-          Seu presente foi reservado e sua mensagem chegará 
-          direto no coração do Maicon e da Thalita.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-          className="bg-white rounded-3xl p-8 shadow-2xl shadow-gold-200/20 mb-10 border border-stone-100"
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Heart className="w-6 h-6 text-gold-500" fill="currentColor" />
-            <p className="font-body text-sm text-stone-500 uppercase tracking-widest">
-              Você escolheu
-            </p>
-          </div>
-          <p className="font-heading text-2xl md:text-3xl text-gold-600 font-semibold mb-3">
-            {giftName}
-          </p>
-          <div className="flex items-center justify-center gap-2 text-rose-500">
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              💝
-            </motion.div>
-            <span className="font-body text-sm">Reservado com carinho</span>
-          </div>
-        </motion.div>
-        
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="font-body text-base text-stone-600 mb-4"
-        >
-          O casal vai entrar em contato para agradecer pessoalmente 🙏
-        </motion.p>
+    <div className="relative min-h-screen flex items-center justify-center bg-invite-ivory px-4 overflow-hidden">
+      <FloralCorner position="tl" size={320} className="absolute -top-6 -left-6 opacity-90" />
+      <FloralCorner position="tr" size={320} className="absolute -top-6 -right-6 opacity-90" />
+      <FloralCorner position="bl" size={280} className="absolute -bottom-6 -left-6 opacity-75" />
+      <FloralCorner position="br" size={280} className="absolute -bottom-6 -right-6 opacity-75" />
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="font-body text-sm text-stone-500 mb-10"
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 text-center max-w-xl"
+      >
+        <Monogram size={84} className="mx-auto mb-6" />
+
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
+          className="w-16 h-16 mx-auto mb-6 rounded-full bg-invite-navy flex items-center justify-center shadow-lg"
         >
-          Obrigado por fazer parte desse momento especial
-        </motion.p>
-        
+          <Check className="w-8 h-8 text-white" />
+        </motion.div>
+
+        <h1 className="font-script text-5xl md:text-6xl text-invite-navy leading-none">Obrigado</h1>
+        <div className="divider-flourish my-5"><span className="dot" /></div>
+
+        <p className="font-heading text-lg md:text-xl text-invite-ink/80 leading-relaxed italic">
+          Seu presente foi reservado e sua mensagem chegará <br className="hidden md:inline" />
+          direto no coração da Thalita e do Maicon.
+        </p>
+
+        <div className="mt-8 bg-white border border-invite-navy/10 rounded-2xl p-6 md:p-8 shadow-sm">
+          <p className="font-body text-[11px] tracking-[0.24em] text-invite-gold-deep uppercase mb-2">Você escolheu</p>
+          <p className="font-heading text-2xl md:text-3xl text-invite-navy font-medium">{giftName}</p>
+          <p className="font-body text-sm text-invite-ink/60 mt-2">Reservado com carinho</p>
+        </div>
+
+        <p className="font-body text-sm text-invite-ink/65 mt-8">
+          O casal vai entrar em contato para agradecer pessoalmente.
+        </p>
+
         <motion.button
           onClick={() => navigate('/')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="bg-gold-500 hover:bg-gold-600 text-white rounded-full px-8 py-4 font-body font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
+          className="mt-10 inline-flex items-center gap-2 bg-invite-navy hover:bg-invite-blue text-white rounded-full px-8 py-4 font-body text-xs tracking-[0.2em] uppercase shadow-lg transition-all"
         >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Voltar para a lista</span>
+          <ArrowLeft className="w-4 h-4" />
+          Voltar para a lista
         </motion.button>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-8"
-        >
-          <p className="font-body text-xs text-stone-400">
-            ✨ Compartilhe esse momento nas redes sociais
-          </p>
-        </motion.div>
+        <p className="font-script text-2xl text-invite-navy mt-10">Thalita &amp; Maicon</p>
       </motion.div>
     </div>
   );

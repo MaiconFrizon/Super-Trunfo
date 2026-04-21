@@ -46,7 +46,8 @@ export default function AddGiftModal({ isOpen, onClose, onSubmit, initialData })
   const [formData, setFormData] = useState({
     name: initialData?.name || '',
     image_url: initialData?.image_url || '',
-    link: initialData?.link || ''
+    link: initialData?.link || '',
+    price: initialData?.price ?? ''
   });
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -181,13 +182,19 @@ export default function AddGiftModal({ isOpen, onClose, onSubmit, initialData })
 
     setLoading(true);
     try {
-      await onSubmit({ ...formData, link: normalizedLink });
+      // Coerce price to number or null
+      const priceNum = formData.price === '' || formData.price === null ? null : Number(formData.price);
+      await onSubmit({
+        ...formData,
+        link: normalizedLink,
+        price: Number.isFinite(priceNum) && priceNum > 0 ? priceNum : null
+      });
     } finally {
       setLoading(false);
     }
 
     // Reset form
-    setFormData({ name: '', image_url: '', link: '' });
+    setFormData({ name: '', image_url: '', link: '', price: '' });
     setLinkError('');
     setLinkTouched(false);
   };
@@ -198,7 +205,8 @@ export default function AddGiftModal({ isOpen, onClose, onSubmit, initialData })
       setFormData({
         name: initialData?.name || '',
         image_url: initialData?.image_url || '',
-        link: initialData?.link || ''
+        link: initialData?.link || '',
+        price: initialData?.price ?? ''
       });
       setLinkError('');
       setLinkTouched(false);
@@ -354,6 +362,29 @@ export default function AddGiftModal({ isOpen, onClose, onSubmit, initialData })
                     {linkError}
                   </p>
                 )}
+              </div>
+
+              {/* --- Gift Price (optional) --- */}
+              <div>
+                <label htmlFor="gift_price" className="block font-body text-sm font-medium text-stone-700 mb-2">
+                  Preço (opcional)
+                </label>
+                <div className="relative">
+                  <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400 font-body text-sm">R$</span>
+                  <input
+                    id="gift_price"
+                    type="number"
+                    inputMode="decimal"
+                    min="0"
+                    step="0.01"
+                    data-testid="gift-price-input"
+                    value={formData.price}
+                    onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                    placeholder="Ex: 799,00"
+                    className="w-full rounded-lg border-2 border-stone-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/20 bg-stone-50/50 pl-10 pr-4 py-3 font-body text-stone-800 transition-all outline-none"
+                  />
+                </div>
+                <p className="mt-1 font-body text-xs text-stone-500">Exibido no card do presente. Deixe vazio para ocultar.</p>
               </div>
 
               {/* --- Gift Image --- */}

@@ -46,6 +46,7 @@ class Gift(BaseModel):
     name: str
     image_url: str
     link: Optional[str] = None  # Admin-only: external product/reference URL
+    price: Optional[float] = None  # Optional price in BRL
     is_selected: bool = False
     selected_by: Optional[dict] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -54,11 +55,13 @@ class GiftCreate(BaseModel):
     name: str
     image_url: str
     link: Optional[str] = None
+    price: Optional[float] = None
 
 class GiftUpdate(BaseModel):
     name: Optional[str] = None
     image_url: Optional[str] = None
     link: Optional[str] = None
+    price: Optional[float] = None
 
 class PublicGift(BaseModel):
     """Public-facing gift model (guest view). Exposes 'link' so guests can view/open the product page."""
@@ -68,6 +71,7 @@ class PublicGift(BaseModel):
     name: str
     image_url: str
     link: Optional[str] = None
+    price: Optional[float] = None
     is_selected: bool = False
     selected_by: Optional[dict] = None
     created_at: datetime

@@ -13,15 +13,28 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		fontFamily: {
-  			heading: ['Playfair Display', 'serif'],
-  			body: ['Lato', 'sans-serif']
+  			heading: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+  			body: ['Lato', 'sans-serif'],
+  			script: ['"Great Vibes"', 'cursive']
   		},
   		colors: {
+  			/* Invitation palette — extracted from the wedding invitation */
+  			invite: {
+  				navy: '#344E8A',
+  				blue: '#4A6AA6',
+  				'blue-soft': '#6A8BAD',
+  				'blue-mist': '#DDE5F0',
+  				ivory: '#F7F3EB',
+  				'ivory-soft': '#FAF7F0',
+  				gold: '#C0A971',
+  				'gold-deep': '#A08A55',
+  				ink: '#424242'
+  			},
   			gold: {
   				'50': '#FBF7E6',
   				'100': '#F6EFCC',
-  				'500': '#D4AF37',
-  				'600': '#AA8C2C'
+  				'500': '#C0A971',
+  				'600': '#A08A55'
   			},
   			rose: {
   				'50': '#FFF1F2',
@@ -79,22 +92,8 @@ module.exports = {
   			}
   		},
   		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
+  			'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+  			'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',

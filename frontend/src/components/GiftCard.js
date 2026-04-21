@@ -1,100 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Heart } from 'lucide-react';
 
+// BRL price formatter
+const fmtBRL = (v) => {
+  const n = Number(v);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+};
+
 export default function GiftCard({ gift, index, onSelect }) {
+  const [liked, setLiked] = useState(false);
+  const price = fmtBRL(gift.price);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.08 }}
-      whileHover={{ y: -8 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ delay: Math.min(index * 0.05, 0.35), duration: 0.5 }}
+      whileHover={{ y: -4 }}
       className="group"
     >
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-rose-100/50 transition-all duration-500 border border-stone-100 relative">
+      <div className="bg-white rounded-xl overflow-hidden border border-invite-navy/10 shadow-[0_1px_2px_rgba(52,78,138,0.04)] hover:shadow-[0_18px_40px_-18px_rgba(52,78,138,0.25)] transition-all duration-500">
         {/* Image */}
-        <div className="relative aspect-square overflow-hidden bg-stone-100">
+        <div className="relative aspect-[4/5] overflow-hidden bg-invite-blue-mist/40">
           <motion.img
-            whileHover={{ scale: 1.08 }}
-            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.8 }}
             src={gift.image_url}
             alt={gift.name}
-            onError={(e) => {
-              e.target.src = 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=800&fit=crop';
-            }}
+            onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=800&fit=crop'; }}
             className="w-full h-full object-cover"
           />
-          
-          {/* Overlay for selected gifts */}
-          {gift.is_selected && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center"
+
+          {/* Heart favorite (decorative) */}
+          {!gift.is_selected && (
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); setLiked(v => !v); }}
+              aria-label={liked ? 'Remover favorito' : 'Favoritar presente'}
+              data-testid={`favorite-gift-${gift.id}`}
+              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center text-invite-navy hover:text-invite-gold transition-colors shadow-sm"
             >
-              <div className="text-center px-4">
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                  className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3"
-                >
-                  <Check className="w-8 h-8 text-rose-500" />
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <span className="font-body text-white font-semibold text-lg block mb-1">
-                    Este presente já encontrou
-                  </span>
-                  <span className="font-body text-white font-semibold text-lg block">
-                    um coração especial 💛
-                  </span>
-                </motion.div>
+              <Heart className={`w-4 h-4 ${liked ? 'fill-invite-gold text-invite-gold' : ''}`} />
+            </button>
+          )}
+
+          {gift.is_selected && (
+            <div className="absolute inset-0 bg-invite-navy/50 backdrop-blur-[2px] flex items-center justify-center">
+              <div className="text-center text-white px-4">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-white/90 flex items-center justify-center">
+                  <Check className="w-6 h-6 text-invite-navy" />
+                </div>
+                <span className="font-heading text-base md:text-lg">Presente escolhido</span>
               </div>
-            </motion.div>
+            </div>
           )}
         </div>
 
         {/* Content */}
-        <div className="p-4 md:p-6">
-          <h3 className="font-heading text-lg md:text-xl font-semibold text-stone-800 line-clamp-1 mb-3 md:mb-4 group-hover:text-gold-600 transition-colors">
+        <div className="p-5 md:p-6 text-center">
+          <h3 className="font-heading text-lg md:text-xl text-invite-navy font-medium line-clamp-1">
             {gift.name}
           </h3>
 
-          {gift.is_selected ? (
-            <div className="text-center py-2">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-700 font-body text-sm font-medium">
-                <Check className="w-4 h-4" />
-                Presente Escolhido
-              </span>
-            </div>
+          {price && (
+            <p className="font-body text-sm text-invite-gold-deep tracking-wide mt-1.5">{price}</p>
+          )}
+
+          {!gift.is_selected ? (
+            <motion.button
+              data-testid={`select-gift-${gift.id}`}
+              onClick={() => onSelect(gift)}
+              whileTap={{ scale: 0.97 }}
+              className="mt-5 w-full rounded-full border border-invite-navy text-invite-navy hover:bg-invite-navy hover:text-white font-body text-xs tracking-[0.2em] uppercase py-3 transition-all"
+            >
+              Escolher
+            </motion.button>
           ) : (
-            <>
-              {/* Reassurance - Apenas Desktop */}
-              <p className="hidden md:block text-xs text-center text-stone-500 mb-3 italic">
-                Explore à vontade, sem compromisso
-              </p>
-              <motion.button
-                data-testid={`select-gift-${gift.id}`}
-                onClick={() => onSelect(gift)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-3 md:py-3 font-body font-bold transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/button text-base md:text-base"
-              >
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <Heart className="w-5 h-5 group-hover/button:fill-current" />
-                </motion.div>
-                <span className="hidden md:inline">Quero dar este presente 💝</span>
-                <span className="md:hidden">Escolher 💝</span>
-              </motion.button>
-            </>
+            <div className="mt-5 w-full rounded-full bg-invite-blue-mist/50 text-invite-navy font-body text-xs tracking-[0.18em] uppercase py-3">
+              Já com um lar
+            </div>
           )}
         </div>
       </div>

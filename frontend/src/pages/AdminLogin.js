@@ -43,35 +43,35 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-100 via-rose-50 to-gold-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-invite-ivory flex items-center justify-center p-4 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md"
+        className="w-full max-w-md relative z-10"
       >
-        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-invite-navy/10">
           <div className="text-center mb-8">
             <motion.div 
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-              className="inline-flex items-center justify-center w-16 h-16 bg-gold-50 rounded-full mb-4"
+              className="inline-flex items-center justify-center w-16 h-16 bg-invite-blue-mist/60 rounded-full mb-4"
             >
-              <Lock className="w-8 h-8 text-gold-600" />
+              <Lock className="w-8 h-8 text-invite-navy" />
             </motion.div>
             
-            <h1 className="font-heading text-3xl md:text-4xl font-semibold text-stone-800 mb-2">
-              👋 Olá! Bem-vindo(a) de volta
+            <h1 className="font-heading text-3xl md:text-4xl font-semibold text-invite-navy mb-2">
+              Bem-vindo(a) de volta
             </h1>
             
-            <p className="font-body text-base text-stone-600">
+            <p className="font-body text-sm text-invite-ink/60">
               Acesso restrito aos organizadores
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label htmlFor="password" className="block font-body text-sm font-medium text-stone-700 mb-2">
+              <label htmlFor="password" className="block font-body text-xs tracking-[0.18em] uppercase text-invite-navy mb-2">
                 Senha de Acesso
               </label>
               <input
@@ -80,7 +80,7 @@ export default function AdminLogin() {
                 data-testid="admin-password-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border-2 border-stone-200 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/20 bg-stone-50/50 px-4 py-3 font-body text-stone-800 transition-all outline-none"
+                className="w-full rounded-lg border-2 border-invite-navy/15 focus:border-invite-navy focus:ring-4 focus:ring-invite-navy/10 bg-invite-ivory-soft px-4 py-3 font-body text-invite-ink transition-all outline-none"
                 placeholder="Digite a senha"
                 disabled={loading}
               />
@@ -90,7 +90,7 @@ export default function AdminLogin() {
               type="submit"
               data-testid="admin-login-button"
               disabled={loading}
-              className="w-full bg-gold-500 hover:bg-gold-600 text-white rounded-full px-8 py-4 font-body font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-invite-navy hover:bg-invite-blue text-white rounded-full px-8 py-4 font-body text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>
@@ -99,17 +99,17 @@ export default function AdminLogin() {
                 </>
               ) : (
                 <>
-                  <LogIn className="w-5 h-5" />
+                  <LogIn className="w-4 h-4" />
                   <span>Entrar</span>
                 </>
               )}
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-stone-200">
+          <div className="mt-8 pt-6 border-t border-invite-navy/10">
             <button
               onClick={() => navigate('/')}
-              className="w-full text-center font-body text-sm text-stone-500 hover:text-gold-600 transition-colors"
+              className="w-full text-center font-body text-xs tracking-[0.16em] uppercase text-invite-ink/50 hover:text-invite-navy transition-colors"
             >
               ← Voltar para lista de presentes
             </button>

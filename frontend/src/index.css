@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +11,28 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #424242;
+    background-color: #F7F3EB;
+}
+
+/* Reusable decorative divider (gold flourish) used across sections */
+.divider-flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #C0A971;
+}
+.divider-flourish::before,
+.divider-flourish::after {
+    content: '';
+    height: 1px;
+    width: 72px;
+    background: linear-gradient(90deg, transparent, #C0A971, transparent);
+}
+.divider-flourish .dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: #C0A971;
 }
 
 code {

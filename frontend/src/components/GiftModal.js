@@ -78,14 +78,14 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
 
             {/* Form */}
             <div className="p-6 md:p-8">
-              <div className="flex items-start gap-3 mb-6 bg-gold-50 rounded-2xl p-4 border border-gold-100">
-                <Heart className="w-6 h-6 text-gold-500 flex-shrink-0 mt-1" fill="currentColor" />
+              <div className="flex items-start gap-3 mb-6 bg-invite-blue-mist/50 rounded-2xl p-4 border border-invite-navy/10">
+                <Heart className="w-6 h-6 text-invite-navy flex-shrink-0 mt-1" fill="currentColor" />
                 <div>
-                  <p className="font-body text-base text-stone-700 font-medium mb-1">
-                    Você escolheu um presente lindo! ✨
+                  <p className="font-heading text-base text-invite-navy font-medium mb-1">
+                    Você escolheu um presente lindo
                   </p>
-                  <p className="font-body text-sm text-stone-600">
-                    Agora só faltam alguns detalhes. Fique tranquilo(a), é rapidinho 😊
+                  <p className="font-body text-sm text-invite-ink/70">
+                    Agora só faltam alguns detalhes. Fique tranquilo(a), é rapidinho.
                   </p>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                     type="submit"
                     data-testid="confirm-gift-selection"
                     disabled={loading}
-                    className="flex-1 bg-gold-500 hover:bg-gold-600 text-white rounded-full px-6 py-4 font-body font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="flex-1 bg-invite-navy hover:bg-invite-blue text-white rounded-full px-6 py-4 font-body text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <>
@@ -180,8 +180,8 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
-                        <span>Confirmar com carinho 💝</span>
+                        <Send className="w-4 h-4" />
+                        <span>Confirmar com carinho</span>
                       </>
                     )}
                   </button>
