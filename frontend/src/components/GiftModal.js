@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Heart, Send } from 'lucide-react';
+import GiftLinkSection from './GiftLinkSection';
 
 export default function GiftModal({ gift, onClose, onConfirm }) {
   const [formData, setFormData] = useState({
@@ -88,6 +89,9 @@ export default function GiftModal({ gift, onClose, onConfirm }) {
                   </p>
                 </div>
               </div>
+
+              {/* Gift link block — only renders when a valid link exists */}
+              <GiftLinkSection link={gift.link} />
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
