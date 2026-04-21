@@ -11,18 +11,18 @@ import { motion } from 'framer-motion';
 // Contact data — phone numbers in international E.164 (digits only) format
 const CONTACTS = [
   {
-    key: 'thalita',
-    name: 'Thalita',
+    key: 'noivo',
+    name: 'Maicon',
     label: 'Falar com o Noivo',
     phone: '5546991404481',
-    message: 'Oi Thalita! Vim pelo site do casamento 💙'
+    message: 'Oi Maicon! Vim pelo site do casamento 💙'
   },
   {
-    key: 'maicon',
-    name: 'Maicon',
+    key: 'noiva',
+    name: 'Thalita',
     label: 'Falar com a Noiva',
     phone: '5514997206571',
-    message: 'Oi Maicon! Vim pelo site do casamento 💙'
+    message: 'Oi Thalita! Vim pelo site do casamento 💙'
   }
 ];
 
