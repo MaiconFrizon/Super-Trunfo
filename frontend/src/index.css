@@ -27,7 +27,7 @@ body {
 .divider-flourish::after {
     content: '';
     height: 1px;
-    width: 72px;
+    width: 110px;
     background: linear-gradient(90deg, transparent, #C0A971, transparent);
 }
 .divider-flourish .dot {
@@ -36,7 +36,7 @@ body {
 }
 /* Heart-centered divider variant (same gold gradient lines) */
 .divider-flourish .heart {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1;
     color: #C0A971;
     transform: translateY(-1px);

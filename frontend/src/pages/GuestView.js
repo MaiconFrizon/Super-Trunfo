@@ -124,10 +124,10 @@ export default function GuestView() {
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-invite-ivory">
         {/* Floral corners */}
-        <FloralCorner position="tl" size={320} className="absolute -top-6 -left-6 opacity-95" />
-        <FloralCorner position="tr" size={320} className="absolute -top-6 -right-6 opacity-95" />
-        <FloralCorner position="bl" size={280} className="absolute -bottom-6 -left-6 opacity-70 hidden md:block" />
-        <FloralCorner position="br" size={280} className="absolute -bottom-6 -right-6 opacity-70 hidden md:block" />
+        <FloralCorner position="tl" size={420} className="absolute -top-10 -left-10 opacity-95" />
+        <FloralCorner position="tr" size={420} className="absolute -top-10 -right-10 opacity-95" />
+        <FloralCorner position="bl" size={340} className="absolute -bottom-10 -left-10 opacity-85 hidden md:block" />
+        <FloralCorner position="br" size={340} className="absolute -bottom-10 -right-10 opacity-85 hidden md:block" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
           <motion.div
@@ -135,26 +135,24 @@ export default function GuestView() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Monogram size={200} className="mx-auto mb-6 md:mb-8" />
+            <Monogram size={110} className="mx-auto mb-8 md:mb-10" />
 
-            {/* Couple names — elegant script */}
-            <h1 className="font-script text-invite-navy leading-[0.9] text-[3.2rem] sm:text-7xl md:text-[6.5rem] tracking-wide">
-              Thalita <span className="text-invite-gold">&amp;</span> Maicon
+            {/* Couple names — elegant script, all navy */}
+            <h1 className="font-script text-invite-navy leading-[0.95] text-[3rem] sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] tracking-wide">
+              Thalita <span>&amp;</span> Maicon
             </h1>
 
-            {/* Gold flourish divider */}
-            <div className="divider-flourish my-6 md:my-8">
+            {/* Gold flourish divider with heart */}
+            <div className="divider-flourish my-5 md:my-7">
               <span className="heart">♡</span>
             </div>
 
-            {/* Bible verse — serif */}
-            <blockquote className="font-heading text-base md:text-lg leading-relaxed text-invite-ink/85 max-w-2xl mx-auto">
-              <span className="italic">
-                Assim, permanecem agora estes três: <br className="hidden md:inline" />
-                a fé, a esperança e o amor. O maior deles, porém, é o amor.
-              </span>
-              <cite className="block not-italic font-body text-xs md:text-sm tracking-[0.18em] text-invite-navy/70 mt-3">
-                1 CORÍNTIOS 13:13
+            {/* Bible verse — serif, centered */}
+            <blockquote className="font-heading text-base md:text-[1.15rem] leading-relaxed text-invite-ink/80 max-w-2xl mx-auto">
+              Assim, permanecem agora estes três: <br />
+              a fé, a esperança e o amor. O maior deles, porém, é o amor.
+              <cite className="block not-italic font-heading italic text-invite-navy/85 text-base md:text-lg mt-3">
+                1 Coríntios 13:13
               </cite>
             </blockquote>
 
@@ -164,7 +162,7 @@ export default function GuestView() {
               onClick={scrollToList}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="mt-10 md:mt-12 inline-flex items-center gap-3 bg-invite-navy hover:bg-invite-blue text-white rounded-full px-10 py-4 font-body text-sm tracking-[0.18em] uppercase transition-all shadow-[0_10px_30px_-12px_rgba(52,78,138,0.45)] hover:shadow-[0_18px_36px_-10px_rgba(52,78,138,0.5)]"
+              className="mt-8 md:mt-10 inline-flex items-center gap-3 bg-invite-navy hover:bg-invite-blue text-white rounded-full px-12 py-4 font-body text-sm tracking-[0.22em] uppercase transition-all shadow-[0_10px_30px_-12px_rgba(52,78,138,0.45)] hover:shadow-[0_18px_36px_-10px_rgba(52,78,138,0.5)]"
             >
               <Gift className="w-4 h-4" />
               Ver Presentes
@@ -199,9 +197,15 @@ export default function GuestView() {
       <section id="presentes" className="py-16 md:py-24 bg-invite-ivory">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <p className="font-body text-xs tracking-[0.3em] text-invite-gold-deep uppercase mb-3">Lista de Presentes</p>
-            <h2 className="font-heading text-3xl md:text-5xl text-invite-navy font-medium">Escolha seu presente</h2>
-            <div className="divider-flourish mt-5"><span className="heart">♡</span></div>
+            <div className="divider-flourish mb-4"><span className="heart">♡</span></div>
+            <h2 className="font-heading text-3xl md:text-5xl text-invite-navy font-medium tracking-[0.2em] uppercase">Escolha seu Presente</h2>
+            <svg className="mx-auto mt-5" width="120" height="18" viewBox="0 0 120 18" fill="none">
+              <path d="M10 9 Q 30 2, 50 9 T 90 9" stroke="#C0A971" strokeWidth="1" fill="none"/>
+              <path d="M10 9 Q 30 16, 50 9 T 90 9" stroke="#C0A971" strokeWidth="1" fill="none"/>
+              <circle cx="60" cy="9" r="2" fill="#C0A971"/>
+              <path d="M100 9 q 4 -6 10 0 q -4 6 -10 0 z" fill="#C0A971" opacity="0.7"/>
+              <path d="M20 9 q -4 -6 -10 0 q 4 6 10 0 z" fill="#C0A971" opacity="0.7"/>
+            </svg>
           </div>
 
           {/* Filter pills — desktop only, softer style */}
@@ -248,23 +252,47 @@ export default function GuestView() {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer id="contato" className="relative bg-white border-t border-invite-navy/10">
-        <FloralCorner position="bl" size={240} className="absolute -bottom-4 -left-4 opacity-80" />
-        <FloralCorner position="br" size={240} className="absolute -bottom-4 -right-4 opacity-80" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
-          <div className="divider-flourish mb-6"><span className="heart">♡</span></div>
-          <h3 className="font-heading text-3xl md:text-4xl text-invite-navy mb-4">Obrigado por estar aqui</h3>
-          <p className="font-body text-base md:text-lg text-invite-ink/75 leading-relaxed max-w-2xl mx-auto">
-            Sua presença e carinho fazem toda a diferença neste momento especial.
-            <br className="hidden md:inline" /> Thalita e Maicon agradecem de coração.
+      {/* ================= MENSAGEM AOS NOIVOS ================= */}
+      <section id="confirmacao" className="bg-white border-t border-invite-navy/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
+          <div className="w-14 h-14 mx-auto mb-4 text-invite-navy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+              <path d="M12 13c1 1.2 2.6.8 2.6-.6 0-1-1.3-1.5-2.6-.4-1.3-1.1-2.6-.6-2.6.4 0 1.4 1.6 1.8 2.6.6z" fill="#C0A971" stroke="#C0A971" />
+            </svg>
+          </div>
+          <h2 className="font-heading text-2xl md:text-3xl text-invite-navy font-medium tracking-wider uppercase">
+            Deixe uma mensagem para os noivos
+          </h2>
+          <p className="font-body text-sm md:text-base text-invite-ink/65 mt-2">
+            Seu carinho ficará guardado para sempre!
           </p>
-          <p className="font-script text-3xl md:text-4xl text-invite-navy mt-6">Thalita &amp; Maicon</p>
+          <button
+            onClick={scrollToList}
+            className="mt-6 inline-flex items-center gap-2 bg-invite-navy hover:bg-invite-blue text-white rounded-full px-10 py-3.5 font-body text-xs tracking-[0.22em] uppercase transition-all shadow-[0_8px_24px_-10px_rgba(52,78,138,0.45)]"
+            data-testid="leave-message-btn"
+          >
+            Deixar Mensagem
+          </button>
+        </div>
+      </section>
 
-          <div className="mt-10 pt-6 border-t border-invite-navy/10">
+      {/* ================= FOOTER ================= */}
+      <footer id="contato" className="relative bg-invite-ivory-soft border-t border-invite-navy/10 overflow-hidden">
+        <FloralCorner position="bl" size={260} className="absolute -bottom-6 -left-6 opacity-85" />
+        <FloralCorner position="br" size={260} className="absolute -bottom-6 -right-6 opacity-85" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16 text-center">
+          <Monogram size={84} className="mx-auto mb-3" />
+          <p className="font-script text-3xl md:text-4xl text-invite-navy">Thalita &amp; Maicon</p>
+          <p className="font-body text-xs md:text-sm text-invite-ink/55 mt-6 tracking-wide">
+            © {new Date().getFullYear()} Thalita &amp; Maicon. Todos os direitos reservados.
+          </p>
+
+          <div className="mt-4">
             <a
               href="/admin"
-              className="inline-flex items-center gap-2 font-body text-xs tracking-[0.16em] uppercase text-invite-navy/50 hover:text-invite-navy transition-colors"
+              className="inline-flex items-center gap-2 font-body text-[10px] tracking-[0.2em] uppercase text-invite-navy/35 hover:text-invite-navy transition-colors"
             >
               Acesso Administrativo
             </a>
