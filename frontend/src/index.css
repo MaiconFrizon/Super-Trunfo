@@ -34,6 +34,13 @@ body {
     width: 6px; height: 6px; border-radius: 999px;
     background: #C0A971;
 }
+/* Heart-centered divider variant (same gold gradient lines) */
+.divider-flourish .heart {
+    font-size: 14px;
+    line-height: 1;
+    color: #C0A971;
+    transform: translateY(-1px);
+}
 
 code {
     font-family:

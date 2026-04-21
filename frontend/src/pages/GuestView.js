@@ -100,7 +100,7 @@ export default function GuestView() {
             </nav>
             {/* Center monogram */}
             <a href="#top" aria-label="Início" className="mx-6">
-              <Monogram size={64} />
+              <Monogram size={72} />
             </a>
             {/* Right nav */}
             <nav className="flex items-center gap-7 justify-end text-xs tracking-[0.18em] text-invite-navy font-body">
@@ -135,7 +135,7 @@ export default function GuestView() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Monogram size={120} className="mx-auto mb-6 md:mb-8" />
+            <Monogram size={200} className="mx-auto mb-6 md:mb-8" />
 
             {/* Couple names — elegant script */}
             <h1 className="font-script text-invite-navy leading-[0.9] text-[3.2rem] sm:text-7xl md:text-[6.5rem] tracking-wide">
@@ -144,7 +144,7 @@ export default function GuestView() {
 
             {/* Gold flourish divider */}
             <div className="divider-flourish my-6 md:my-8">
-              <span className="dot" />
+              <span className="heart">♡</span>
             </div>
 
             {/* Bible verse — serif */}
@@ -201,7 +201,7 @@ export default function GuestView() {
           <div className="text-center mb-12 md:mb-16">
             <p className="font-body text-xs tracking-[0.3em] text-invite-gold-deep uppercase mb-3">Lista de Presentes</p>
             <h2 className="font-heading text-3xl md:text-5xl text-invite-navy font-medium">Escolha seu presente</h2>
-            <div className="divider-flourish mt-5"><span className="dot" /></div>
+            <div className="divider-flourish mt-5"><span className="heart">♡</span></div>
           </div>
 
           {/* Filter pills — desktop only, softer style */}
@@ -253,7 +253,7 @@ export default function GuestView() {
         <FloralCorner position="bl" size={240} className="absolute -bottom-4 -left-4 opacity-80" />
         <FloralCorner position="br" size={240} className="absolute -bottom-4 -right-4 opacity-80" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
-          <div className="divider-flourish mb-6"><span className="dot" /></div>
+          <div className="divider-flourish mb-6"><span className="heart">♡</span></div>
           <h3 className="font-heading text-3xl md:text-4xl text-invite-navy mb-4">Obrigado por estar aqui</h3>
           <p className="font-body text-base md:text-lg text-invite-ink/75 leading-relaxed max-w-2xl mx-auto">
             Sua presença e carinho fazem toda a diferença neste momento especial.

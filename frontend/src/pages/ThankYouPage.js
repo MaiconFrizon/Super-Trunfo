@@ -35,7 +35,7 @@ export default function ThankYouPage() {
         </motion.div>
 
         <h1 className="font-script text-5xl md:text-6xl text-invite-navy leading-none">Obrigado</h1>
-        <div className="divider-flourish my-5"><span className="dot" /></div>
+        <div className="divider-flourish my-5"><span className="heart">♡</span></div>
 
         <p className="font-heading text-lg md:text-xl text-invite-ink/80 leading-relaxed italic">
           Seu presente foi reservado e sua mensagem chegará <br className="hidden md:inline" />
