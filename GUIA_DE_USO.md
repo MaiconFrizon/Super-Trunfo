@@ -5,12 +5,12 @@
 ### Como acessar o painel admin:
 
 **Opção 1 - Link no rodapé:**
-1. Vá até a página principal: https://kitchenrsvp.preview.emergentagent.com
+1. Vá até a página principal: https://maicon-thalita-gifts.preview.emergentagent.com
 2. Role até o final da página
 3. Clique em "🔒 Acesso Administrativo"
 
 **Opção 2 - URL direta:**
-- Acesse: https://kitchenrsvp.preview.emergentagent.com/admin
+- Acesse: https://maicon-thalita-gifts.preview.emergentagent.com/admin
 
 **Credenciais:**
 - Senha: `admin123`
@@ -177,10 +177,10 @@ O que pode parecer "problema":
 ## 📱 ACESSO RÁPIDO
 
 **Página Principal (Convidados):**
-👉 https://kitchenrsvp.preview.emergentagent.com
+👉 https://maicon-thalita-gifts.preview.emergentagent.com
 
 **Painel Admin:**
-👉 https://kitchenrsvp.preview.emergentagent.com/admin
+👉 https://maicon-thalita-gifts.preview.emergentagent.com/admin
 🔑 Senha: `admin123`
 
 ---

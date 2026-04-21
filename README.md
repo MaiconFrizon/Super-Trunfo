@@ -32,7 +32,7 @@ Aplicação web elegante e sofisticada para gerenciar lista de presentes de chá
 ## 🚀 Como Usar
 
 ### Acesso Convidado
-1. Acesse a página principal: `https://kitchenrsvp.preview.emergentagent.com`
+1. Acesse a página principal: `https://maicon-thalita-gifts.preview.emergentagent.com`
 2. Navegue pelos presentes disponíveis
 3. Clique em "Escolher este Presente" no presente desejado
 4. Preencha seus dados (nome, sobrenome, contato)
@@ -40,7 +40,7 @@ Aplicação web elegante e sofisticada para gerenciar lista de presentes de chá
 6. Confirme a escolha
 
 ### Acesso Administrativo
-1. Acesse: `https://kitchenrsvp.preview.emergentagent.com/admin`
+1. Acesse: `https://maicon-thalita-gifts.preview.emergentagent.com/admin`
 2. Use a senha: `admin123`
 3. Gerencie presentes e visualize seleções
 
@@ -70,7 +70,7 @@ ADMIN_PASSWORD="admin123"
 
 **Frontend** (`/app/frontend/.env`):
 ```
-REACT_APP_BACKEND_URL=https://kitchenrsvp.preview.emergentagent.com
+REACT_APP_BACKEND_URL=https://maicon-thalita-gifts.preview.emergentagent.com
 ```
 
 ## 📝 Endpoints da API
