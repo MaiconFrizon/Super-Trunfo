@@ -42,7 +42,7 @@ export default function ContactSection() {
   return (
     <section
       id="contato"
-      className="contact-section relative bg-invite-ivory px-4 sm:px-6 lg:px-8 py-20 md:py-28 border-t border-invite-navy/10"
+      className="contact-section relative bg-invite-ivory px-4 sm:px-6 lg:px-8 py-20 md:py-28 border-t border-invite-navy/10 scroll-mt-20"
       data-testid="contact-section"
     >
       <motion.div
@@ -91,7 +91,7 @@ export default function ContactSection() {
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-              className="whatsapp-button group inline-flex items-center justify-center gap-3 rounded-full bg-invite-navy hover:bg-invite-blue text-white px-8 md:px-10 py-4 font-body text-[0.72rem] md:text-xs tracking-[0.22em] uppercase transition-colors duration-300 shadow-[0_10px_28px_-12px_rgba(52,78,138,0.45)] hover:shadow-[0_18px_34px_-12px_rgba(52,78,138,0.55)] focus:outline-none focus:ring-4 focus:ring-invite-navy/20"
+              className="whatsapp-button group inline-flex w-full md:w-auto items-center justify-center gap-3 rounded-full bg-invite-navy hover:bg-invite-blue active:bg-invite-blue text-white px-8 md:px-10 min-h-[56px] py-4 font-body text-sm md:text-xs tracking-[0.18em] md:tracking-[0.22em] uppercase transition-colors duration-300 shadow-[0_10px_28px_-12px_rgba(52,78,138,0.45)] hover:shadow-[0_18px_34px_-12px_rgba(52,78,138,0.55)] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-invite-navy/20"
             >
               <WhatsAppIcon className="w-5 h-5 transition-transform group-hover:scale-110" />
               <span>{c.label}</span>

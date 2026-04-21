@@ -74,12 +74,12 @@ export default function GiftCard({ gift, index, onSelect }) {
               data-testid={`select-gift-${gift.id}`}
               onClick={() => onSelect(gift)}
               whileTap={{ scale: 0.97 }}
-              className="mt-5 w-full rounded-full border border-invite-navy text-invite-navy hover:bg-invite-navy hover:text-white font-body text-xs tracking-[0.2em] uppercase py-3 transition-all"
+              className="mt-5 w-full rounded-full border border-invite-navy text-invite-navy hover:bg-invite-navy hover:text-white active:bg-invite-navy active:text-white active:scale-[0.98] font-body text-xs tracking-[0.2em] uppercase min-h-[48px] py-3 transition-all"
             >
               Escolher
             </motion.button>
           ) : (
-            <div className="mt-5 w-full rounded-full bg-invite-blue-mist/50 text-invite-navy font-body text-xs tracking-[0.18em] uppercase py-3">
+            <div className="mt-5 w-full rounded-full bg-invite-blue-mist/50 text-invite-navy font-body text-xs tracking-[0.18em] uppercase min-h-[48px] flex items-center justify-center py-3">
               Já com um lar
             </div>
           )}

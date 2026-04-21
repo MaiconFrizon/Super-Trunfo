@@ -113,11 +113,11 @@ export default function GuestView() {
               </a>
             </nav>
           </div>
-          {/* Mobile nav — simplified */}
+          {/* Mobile nav — simplified (shorter letter-spacing to fit 320px) */}
           <div className="md:hidden flex items-center justify-between py-3">
-            <a href="#presentes" className="font-body text-[11px] tracking-[0.16em] text-invite-navy">PRESENTES</a>
+            <a href="#presentes" className="font-body text-[10px] tracking-[0.12em] text-invite-navy whitespace-nowrap">PRESENTES</a>
             <Monogram size={48} />
-            <a href="#como-funciona" className="font-body text-[11px] tracking-[0.16em] text-invite-navy">COMO FUNCIONA</a>
+            <a href="#contato" className="font-body text-[10px] tracking-[0.12em] text-invite-navy whitespace-nowrap">CONTATO</a>
           </div>
         </div>
       </header>
@@ -139,7 +139,7 @@ export default function GuestView() {
             <Monogram size={110} className="mx-auto mb-8 md:mb-10" />
 
             {/* Couple names — elegant script, all navy */}
-            <h1 className="font-script text-invite-navy leading-[0.95] text-[3rem] sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] tracking-wide">
+            <h1 className="font-script text-invite-navy leading-[0.95] text-[2.5rem] xs:text-[3rem] sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] tracking-wide break-words">
               Thalita <span>&amp;</span> Maicon
             </h1>
 
@@ -173,7 +173,7 @@ export default function GuestView() {
       </section>
 
       {/* ================= INFO HIGHLIGHTS ================= */}
-      <section id="como-funciona" className="bg-white border-y border-invite-navy/10">
+      <section id="como-funciona" className="bg-white border-y border-invite-navy/10 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 md:divide-x divide-invite-navy/10">
             {[
@@ -195,7 +195,7 @@ export default function GuestView() {
       </section>
 
       {/* ================= GIFT LIST ================= */}
-      <section id="presentes" className="py-16 md:py-24 bg-invite-ivory">
+      <section id="presentes" className="py-16 md:py-24 bg-invite-ivory scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <div className="divider-flourish mb-4"><span className="heart">♡</span></div>
@@ -254,7 +254,7 @@ export default function GuestView() {
       </section>
 
       {/* ================= MENSAGEM AOS NOIVOS ================= */}
-      <section id="confirmacao" className="bg-white border-t border-invite-navy/10">
+      <section id="confirmacao" className="bg-white border-t border-invite-navy/10 scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
           <div className="w-14 h-14 mx-auto mb-4 text-invite-navy">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
