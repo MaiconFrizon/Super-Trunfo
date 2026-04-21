@@ -79,8 +79,9 @@ export default function GiftCard({ gift, index, onSelect }) {
               Escolher
             </motion.button>
           ) : (
-            <div className="mt-5 w-full rounded-full bg-invite-blue-mist/50 text-invite-navy font-body text-xs tracking-[0.18em] uppercase min-h-[48px] flex items-center justify-center py-3">
-              Já com um lar
+            <div className="mt-5 w-full rounded-full bg-invite-blue-mist/50 text-invite-navy font-body text-xs tracking-[0.18em] uppercase min-h-[48px] flex items-center justify-center gap-1.5 py-3">
+              <span>Recebido com Carinho</span>
+              <span aria-hidden="true">❤️</span>
             </div>
           )}
         </div>
