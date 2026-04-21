@@ -126,7 +126,7 @@ export default function GiftLinkSection({ link }) {
       </div>
 
       <p className="mt-3 font-body text-sm md:text-[0.95rem] font-bold text-invite-navy leading-snug">
-        OBS: Esse link é só uma referência do presente, ok? <span aria-hidden="true">😊</span>
+        OBS: Esse link é só uma referência do presente, ok? — é esse modelo que selecionamos como ideal
       </p>
     </div>
   );
