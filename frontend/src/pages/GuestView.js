@@ -8,6 +8,7 @@ import GiftCard from '../components/GiftCard';
 import GiftModal from '../components/GiftModal';
 import Monogram from '../components/Monogram';
 import FloralCorner from '../components/FloralCorner';
+import ContactSection from '../components/ContactSection';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -278,8 +279,11 @@ export default function GuestView() {
         </div>
       </section>
 
+      {/* ================= CONTACT (WhatsApp) ================= */}
+      <ContactSection />
+
       {/* ================= FOOTER ================= */}
-      <footer id="contato" className="relative bg-invite-ivory-soft border-t border-invite-navy/10 overflow-hidden">
+      <footer id="rodape" className="relative bg-invite-ivory-soft border-t border-invite-navy/10 overflow-hidden">
         <FloralCorner position="bl" size={260} className="absolute -bottom-6 -left-6 opacity-85" />
         <FloralCorner position="br" size={260} className="absolute -bottom-6 -right-6 opacity-85" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16 text-center">
