@@ -259,11 +259,16 @@ export default function GuestView() {
       {/* ================= MENSAGEM AOS NOIVOS ================= */}
       <section id="confirmacao" className="bg-white border-t border-invite-navy/10 scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
-          <div className="w-14 h-14 mx-auto mb-4 text-invite-navy">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          <div className="w-14 h-14 mx-auto mb-4 relative">
+            {/* Envelope — navy outline */}
+            <svg viewBox="0 0 24 24" className="w-full h-full text-invite-navy" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m3 7 9 6 9-6" />
-              <path d="M12 13c1 1.2 2.6.8 2.6-.6 0-1-1.3-1.5-2.6-.4-1.3-1.1-2.6-.6-2.6.4 0 1.4 1.6 1.8 2.6.6z" fill="#C0A971" stroke="#C0A971" />
+            </svg>
+            {/* Small gold heart stamp overlay */}
+            <svg viewBox="0 0 24 24" className="absolute inset-0 m-auto w-4 h-4 text-invite-gold" fill="currentColor" aria-hidden="true"
+                 style={{ top: '55%', transform: 'translateY(-50%)' }}>
+              <path d="M12 20s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 10c0 5.65-7 10-7 10z" />
             </svg>
           </div>
           <h2 className="font-heading text-2xl md:text-3xl text-invite-navy font-medium tracking-wider uppercase">
