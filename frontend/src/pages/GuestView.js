@@ -200,12 +200,15 @@ export default function GuestView() {
           <div className="text-center mb-12 md:mb-16">
             <div className="divider-flourish mb-4"><span className="heart">♡</span></div>
             <h2 className="font-heading text-3xl md:text-5xl text-invite-navy font-medium tracking-[0.2em] uppercase">Escolha seu Presente</h2>
-            <svg className="mx-auto mt-5" width="120" height="18" viewBox="0 0 120 18" fill="none">
-              <path d="M10 9 Q 30 2, 50 9 T 90 9" stroke="#C0A971" strokeWidth="1" fill="none"/>
-              <path d="M10 9 Q 30 16, 50 9 T 90 9" stroke="#C0A971" strokeWidth="1" fill="none"/>
-              <circle cx="60" cy="9" r="2" fill="#C0A971"/>
-              <path d="M100 9 q 4 -6 10 0 q -4 6 -10 0 z" fill="#C0A971" opacity="0.7"/>
-              <path d="M20 9 q -4 -6 -10 0 q 4 6 10 0 z" fill="#C0A971" opacity="0.7"/>
+            <svg className="mx-auto mt-5" width="180" height="14" viewBox="0 0 180 14" fill="none" aria-hidden="true">
+              {/* Left mirrored S-curve */}
+              <path d="M4 7 C 22 -3, 44 17, 62 7 C 76 0, 86 4, 90 7"
+                    stroke="#C0A971" strokeWidth="1.1" strokeLinecap="round" fill="none" />
+              {/* Right mirrored S-curve */}
+              <path d="M176 7 C 158 -3, 136 17, 118 7 C 104 0, 94 4, 90 7"
+                    stroke="#C0A971" strokeWidth="1.1" strokeLinecap="round" fill="none" />
+              {/* Center diamond ornament */}
+              <path d="M90 2 L 94 7 L 90 12 L 86 7 Z" fill="#C0A971" />
             </svg>
           </div>
 
