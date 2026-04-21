@@ -125,8 +125,8 @@ export default function GiftLinkSection({ link }) {
         </div>
       </div>
 
-      <p className="mt-2 font-body text-xs text-stone-500">
-        Confira detalhes do presente antes de confirmar sua escolha.
+      <p className="mt-3 font-body text-sm md:text-[0.95rem] font-bold text-invite-navy leading-snug">
+        OBS: Esse link é só uma referência do presente, ok? <span aria-hidden="true">😊</span>
       </p>
     </div>
   );
