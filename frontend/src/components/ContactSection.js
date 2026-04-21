@@ -13,14 +13,14 @@ const CONTACTS = [
   {
     key: 'thalita',
     name: 'Thalita',
-    label: 'Falar com Thalita',
+    label: 'Falar com o Noivo',
     phone: '5546991404481',
     message: 'Oi Thalita! Vim pelo site do casamento 💙'
   },
   {
     key: 'maicon',
     name: 'Maicon',
-    label: 'Falar com Maicon',
+    label: 'Falar com a Noiva',
     phone: '5514997206571',
     message: 'Oi Maicon! Vim pelo site do casamento 💙'
   }
