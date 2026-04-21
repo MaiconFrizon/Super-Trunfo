@@ -45,6 +45,7 @@ class Gift(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
     image_url: str
+    link: Optional[str] = None  # Admin-only: external product/reference URL
     is_selected: bool = False
     selected_by: Optional[dict] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -52,10 +53,23 @@ class Gift(BaseModel):
 class GiftCreate(BaseModel):
     name: str
     image_url: str
+    link: Optional[str] = None
 
 class GiftUpdate(BaseModel):
     name: Optional[str] = None
     image_url: Optional[str] = None
+    link: Optional[str] = None
+
+class PublicGift(BaseModel):
+    """Public-facing gift model (guest view) — excludes admin-only fields like 'link'."""
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    name: str
+    image_url: str
+    is_selected: bool = False
+    selected_by: Optional[dict] = None
+    created_at: datetime
 
 class GuestSelection(BaseModel):
     first_name: str
@@ -98,10 +112,10 @@ async def verify_admin_token(credentials: HTTPAuthorizationCredentials = Depends
 
 # ============ ROUTES - PUBLIC ============
 
-@api_router.get("/gifts", response_model=List[Gift])
+@api_router.get("/gifts", response_model=List[PublicGift])
 async def get_gifts():
-    """Get all gifts for guest view"""
-    gifts = await db.gifts.find({}, {"_id": 0}).to_list(1000)
+    """Get all gifts for guest view (excludes admin-only 'link' field)"""
+    gifts = await db.gifts.find({}, {"_id": 0, "link": 0}).to_list(1000)
     
     for gift in gifts:
         if isinstance(gift.get('created_at'), str):
