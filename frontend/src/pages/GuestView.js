@@ -181,8 +181,8 @@ export default function GuestView() {
               { icon: <Heart className="w-6 h-6" />, title: 'Deixe sua mensagem', sub: 'Para os noivos' },
               { icon: <SendIcon />, title: 'Confirme sua escolha', sub: 'É rapidinho!' },
               { icon: <LockIcon />, title: 'Ambiente seguro', sub: 'Seus dados protegidos' }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center gap-3 md:gap-4 px-3 md:px-6 text-center md:text-left">
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col md:flex-row items-center gap-3 md:gap-4 px-3 md:px-6 text-center md:text-left">
                 <div className="text-invite-navy">{item.icon}</div>
                 <div>
                   <p className="font-heading text-base md:text-lg text-invite-navy font-medium leading-tight">{item.title}</p>

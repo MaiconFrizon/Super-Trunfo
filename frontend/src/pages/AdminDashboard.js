@@ -1,3 +1,4 @@
+import { log } from '../lib/log';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Gift, LogOut, Plus, Edit2, Trash2, Download, Upload, User, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
@@ -34,7 +35,7 @@ export default function AdminDashboard() {
       });
       setGifts(response.data);
     } catch (error) {
-      console.error('Erro ao carregar presentes:', error);
+      log.error('Erro ao carregar presentes:', error);
       if (error.response?.status === 401) {
         toast.error('Sessão expirada. Faça login novamente.');
         localStorage.removeItem('admin_token');
@@ -66,7 +67,7 @@ export default function AdminDashboard() {
       setShowAddModal(false);
       fetchGifts();
     } catch (error) {
-      console.error('Erro ao adicionar presente:', error);
+      log.error('Erro ao adicionar presente:', error);
       toast.error('Erro ao adicionar presente', {
         description: 'Tente novamente',
         duration: 3000
@@ -87,7 +88,7 @@ export default function AdminDashboard() {
       setEditingGift(null);
       fetchGifts();
     } catch (error) {
-      console.error('Erro ao atualizar presente:', error);
+      log.error('Erro ao atualizar presente:', error);
       toast.error('Erro ao atualizar presente', {
         description: 'Tente novamente',
         duration: 3000
@@ -111,7 +112,7 @@ export default function AdminDashboard() {
       });
       fetchGifts();
     } catch (error) {
-      console.error('Erro ao remover presente:', error);
+      log.error('Erro ao remover presente:', error);
       toast.error('Erro ao remover presente', {
         description: 'Tente novamente',
         duration: 3000
@@ -140,7 +141,7 @@ export default function AdminDashboard() {
         duration: 3000
       });
     } catch (error) {
-      console.error('Erro ao exportar dados:', error);
+      log.error('Erro ao exportar dados:', error);
       toast.error('Erro ao exportar dados', {
         description: 'Tente novamente',
         duration: 3000

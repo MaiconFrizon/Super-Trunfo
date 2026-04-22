@@ -1,3 +1,4 @@
+import { log } from '../lib/log';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, LogIn } from 'lucide-react';
@@ -32,7 +33,7 @@ export default function AdminLogin() {
       });
       setTimeout(() => navigate('/admin/dashboard'), 500);
     } catch (error) {
-      console.error('Erro no login:', error);
+      log.error('Erro no login:', error);
       toast.error('Senha incorreta', {
         description: 'Verifique e tente novamente',
         duration: 3000

@@ -1,3 +1,4 @@
+import { log } from '../lib/log';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Upload, Image as ImageIcon, Link2, ExternalLink, Copy, Check, AlertCircle } from 'lucide-react';
@@ -152,7 +153,7 @@ export default function AddGiftModal({ isOpen, onClose, onSubmit, initialData })
       setFormData({ ...formData, image_url: response.data.url });
       toast.success('Imagem carregada com sucesso!');
     } catch (error) {
-      console.error('Erro ao fazer upload:', error);
+      log.error('Erro ao fazer upload:', error);
       toast.error('Erro ao fazer upload da imagem');
     } finally {
       setUploading(false);
